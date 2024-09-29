@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home2</title>
+    <style>
+        body {background-color: #{$= "background" "7f7f7f" @tparamGet $};}
+    </style>
+</head>
+<body>
+    <h1>Scripts</h1>
+    <ul>
+        <li><a href="/scripts/osnovni.smscr">osnovni.smscr</a></li>
+        <li><a href="/scripts/brojPoziva.smscr">brojPoziva.smscr</a></li>
+        <li><a href="/scripts/fibonacciHTML.smscr">fibonacciHTML.smscr</a></li>
+    </ul>
+    <h1>Workers</h1>
+    <ul>
+        <li><a href="/ext/HelloWorker">HelloWorker</a></li>
+        <li><a href="/ext/CircleWorker">CircleWorker</a></li>
+    </ul>
+    <h1>Calculate something</h1>
+   <form action="/calc" method="GET">
+           <label for="a">Enter value for a:</label>
+           <input type="number" id="a" name="a">
+           <br>
+           <label for="b">Enter value for b:</label>
+           <input type="number" id="b" name="b">
+           <br>
+           <input type="submit" value="Calculate Sum">
+       </form>
+
+       <h1>Choose Background Color</h1>
+       <form action="/setbgcolor" method="GET">
+           <label for="color">Select a color:</label>
+           <select id="color" name="bgcolor">
+               <option value="FFFFFF" {$= "background" "" @tparamGet "FFFFFF" "selected" "" @equals $}>White</option>
+               <option value="FFA500" {$= "background" "" @tparamGet "FFA500" "selected" "" @equals $}>Orange</option>
+               <option value="FF0000" {$= "background" "" @tparamGet "FF0000" "selected" "" @equals $}>Red</option>
+               <option value="008000" {$= "background" "" @tparamGet "008000" "selected" "" @equals $}>Green</option>
+           </select>
+           <br>
+           <input type="submit" value="Set Background Color">
+       </form>
+</body>
+</html>

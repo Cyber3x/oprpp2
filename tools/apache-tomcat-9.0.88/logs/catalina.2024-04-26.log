@@ -1,0 +1,582 @@
+26-Apr-2024 12:01:07.696 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.88
+26-Apr-2024 12:01:07.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 9 2024 13:22:30 UTC
+26-Apr-2024 12:01:07.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.88.0
+26-Apr-2024 12:01:07.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+26-Apr-2024 12:01:07.701 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.5.4-76060504-generic
+26-Apr-2024 12:01:07.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+26-Apr-2024 12:01:07.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-21-oracle-x64
+26-Apr-2024 12:01:07.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21+35-LTS-2513
+26-Apr-2024 12:01:07.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+26-Apr-2024 12:01:07.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 12:01:07.702 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 12:01:07.711 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+26-Apr-2024 12:01:07.712 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+26-Apr-2024 12:01:07.712 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+26-Apr-2024 12:01:07.712 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+26-Apr-2024 12:01:07.712 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+26-Apr-2024 12:01:07.712 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/conf/logging.properties
+26-Apr-2024 12:01:07.712 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+26-Apr-2024 12:01:07.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+26-Apr-2024 12:01:07.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+26-Apr-2024 12:01:07.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+26-Apr-2024 12:01:07.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+26-Apr-2024 12:01:07.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 12:01:07.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 12:01:07.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/temp
+26-Apr-2024 12:01:07.716 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+26-Apr-2024 12:01:08.105 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 12:01:08.133 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [588] milliseconds
+26-Apr-2024 12:01:08.175 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+26-Apr-2024 12:01:08.175 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.88]
+26-Apr-2024 12:01:08.182 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT]
+26-Apr-2024 12:01:08.474 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT] has finished in [292] ms
+26-Apr-2024 12:01:08.474 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager]
+26-Apr-2024 12:01:08.512 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager] has finished in [38] ms
+26-Apr-2024 12:01:08.513 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs]
+26-Apr-2024 12:01:08.531 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs] has finished in [18] ms
+26-Apr-2024 12:01:08.531 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples]
+26-Apr-2024 12:01:08.745 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples] has finished in [213] ms
+26-Apr-2024 12:01:08.745 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager]
+26-Apr-2024 12:01:08.766 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager] has finished in [20] ms
+26-Apr-2024 12:01:08.769 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 12:01:08.779 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [645] milliseconds
+26-Apr-2024 12:03:38.821 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:03:38.876 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:03:38.878 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [58] ms
+26-Apr-2024 12:23:29.145 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:23:29.171 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:23:29.197 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:23:29.199 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [28] ms
+26-Apr-2024 12:24:09.206 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:24:09.218 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:24:09.256 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:24:09.257 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [39] ms
+26-Apr-2024 12:25:39.271 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:25:39.277 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:25:39.306 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:25:39.308 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [31] ms
+26-Apr-2024 12:26:59.322 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:26:59.328 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:26:59.352 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:26:59.353 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [25] ms
+26-Apr-2024 12:28:49.374 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:28:49.386 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:28:49.423 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:28:49.424 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [39] ms
+26-Apr-2024 12:31:29.454 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:31:29.468 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:31:29.505 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:31:29.506 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [38] ms
+26-Apr-2024 12:40:29.607 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:40:29.620 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:40:29.656 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:40:29.658 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [38] ms
+26-Apr-2024 12:42:39.682 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:42:39.695 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:42:39.727 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:42:39.729 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [34] ms
+26-Apr-2024 12:43:19.736 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:43:19.745 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:43:19.773 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:43:19.775 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [31] ms
+26-Apr-2024 12:44:09.785 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:44:09.795 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:44:09.834 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:44:09.835 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [40] ms
+26-Apr-2024 12:45:09.845 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:45:09.849 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:45:09.866 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:45:09.867 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [18] ms
+26-Apr-2024 12:46:49.885 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:46:49.891 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:46:49.923 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:46:49.925 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [34] ms
+26-Apr-2024 12:48:19.942 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:48:19.950 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:48:19.984 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:48:19.985 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [34] ms
+26-Apr-2024 12:49:19.993 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:49:19.997 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:49:20.014 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:49:20.015 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [19] ms
+26-Apr-2024 12:49:50.022 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:50:00.034 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:50:00.077 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:50:00.078 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [44] ms
+26-Apr-2024 12:52:00.103 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:52:00.108 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:52:00.136 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:52:00.138 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [30] ms
+26-Apr-2024 12:52:30.142 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:52:30.146 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:52:30.168 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:52:30.169 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [23] ms
+26-Apr-2024 12:54:20.191 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:54:50.206 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:54:50.249 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:54:50.250 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [44] ms
+26-Apr-2024 12:55:30.257 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:55:30.259 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:55:30.280 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:55:30.281 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [22] ms
+26-Apr-2024 12:57:20.302 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:57:20.311 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:57:20.348 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:57:20.349 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [38] ms
+26-Apr-2024 12:57:30.350 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:57:40.355 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:57:40.395 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:57:40.397 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [42] ms
+26-Apr-2024 12:58:50.408 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 12:58:50.417 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 12:58:50.457 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 12:58:50.458 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [42] ms
+26-Apr-2024 13:02:00.486 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:02:10.490 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:02:10.509 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:02:10.510 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [20] ms
+26-Apr-2024 13:02:50.518 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:02:50.526 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:02:50.562 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:02:50.563 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [37] ms
+26-Apr-2024 13:03:50.576 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:03:50.585 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:03:50.628 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:03:50.630 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [44] ms
+26-Apr-2024 13:04:30.637 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:04:30.645 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:04:30.687 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:04:30.688 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [42] ms
+26-Apr-2024 13:05:30.698 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:05:40.705 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:05:40.731 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:05:40.732 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [27] ms
+26-Apr-2024 13:07:40.753 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:07:40.762 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:07:40.801 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:07:40.802 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [40] ms
+26-Apr-2024 13:08:20.808 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:08:30.814 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:08:30.857 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:08:30.858 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [45] ms
+26-Apr-2024 13:09:00.861 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:09:00.870 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:09:00.913 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:09:00.914 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [43] ms
+26-Apr-2024 13:11:20.934 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:11:20.937 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:11:20.961 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:11:20.963 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [25] ms
+26-Apr-2024 13:13:30.979 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:13:40.984 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:13:41.005 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:13:41.007 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [24] ms
+26-Apr-2024 13:14:21.010 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:14:31.017 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:14:31.051 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:14:31.052 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [34] ms
+26-Apr-2024 13:22:41.632 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:22:41.638 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:22:41.681 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:22:41.682 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [44] ms
+26-Apr-2024 13:24:21.699 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:24:21.707 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:24:21.743 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:24:21.744 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [37] ms
+26-Apr-2024 13:26:51.772 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:26:51.780 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:26:51.819 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:26:51.820 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [40] ms
+26-Apr-2024 13:31:41.869 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:31:51.874 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:31:51.895 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:31:51.897 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [22] ms
+26-Apr-2024 13:33:31.913 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:33:31.920 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:33:32.409 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:33:32.413 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [493] ms
+26-Apr-2024 13:34:12.419 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:34:12.427 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:34:12.883 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:34:12.889 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [461] ms
+26-Apr-2024 13:38:32.933 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:38:32.941 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:38:33.397 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:38:33.401 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [460] ms
+26-Apr-2024 13:41:23.425 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:41:23.436 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:41:23.937 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:41:23.941 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [506] ms
+26-Apr-2024 13:46:43.999 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:46:44.010 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:46:44.508 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:46:44.514 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [503] ms
+26-Apr-2024 13:48:04.529 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:48:04.532 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:48:04.948 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:48:04.954 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [421] ms
+26-Apr-2024 13:48:24.956 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:48:34.965 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:48:35.377 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:48:35.381 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [417] ms
+26-Apr-2024 13:59:25.485 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 13:59:35.491 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 13:59:36.087 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 13:59:36.091 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [601] ms
+26-Apr-2024 14:00:16.098 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:00:26.106 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:00:26.674 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:00:26.678 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [572] ms
+26-Apr-2024 14:00:56.682 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:01:06.687 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:01:07.283 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:01:07.287 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [600] ms
+26-Apr-2024 14:23:37.506 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:23:47.512 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:23:48.326 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:23:48.331 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [819] ms
+26-Apr-2024 14:33:28.428 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:33:38.436 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:33:39.372 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:33:39.375 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [939] ms
+26-Apr-2024 14:34:19.382 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:34:19.385 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:34:20.181 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:34:20.185 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [800] ms
+26-Apr-2024 14:34:35.251 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+26-Apr-2024 14:34:35.252 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:34:35.254 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+26-Apr-2024 14:34:35.261 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:34:35.265 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:34:42.319 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.88
+26-Apr-2024 14:34:42.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 9 2024 13:22:30 UTC
+26-Apr-2024 14:34:42.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.88.0
+26-Apr-2024 14:34:42.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+26-Apr-2024 14:34:42.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.5.4-76060504-generic
+26-Apr-2024 14:34:42.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+26-Apr-2024 14:34:42.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-21-oracle-x64
+26-Apr-2024 14:34:42.322 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21+35-LTS-2513
+26-Apr-2024 14:34:42.323 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+26-Apr-2024 14:34:42.323 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:34:42.323 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:34:42.329 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+26-Apr-2024 14:34:42.329 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+26-Apr-2024 14:34:42.329 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+26-Apr-2024 14:34:42.329 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+26-Apr-2024 14:34:42.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+26-Apr-2024 14:34:42.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/conf/logging.properties
+26-Apr-2024 14:34:42.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+26-Apr-2024 14:34:42.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+26-Apr-2024 14:34:42.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+26-Apr-2024 14:34:42.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+26-Apr-2024 14:34:42.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+26-Apr-2024 14:34:42.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:34:42.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:34:42.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/temp
+26-Apr-2024 14:34:42.333 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+26-Apr-2024 14:34:42.662 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:34:42.681 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [505] milliseconds
+26-Apr-2024 14:34:42.725 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+26-Apr-2024 14:34:42.726 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.88]
+26-Apr-2024 14:34:42.740 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:34:43.956 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:34:44.027 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [1,286] ms
+26-Apr-2024 14:34:44.027 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT]
+26-Apr-2024 14:34:44.044 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT] has finished in [17] ms
+26-Apr-2024 14:34:44.045 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager]
+26-Apr-2024 14:34:44.079 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager] has finished in [34] ms
+26-Apr-2024 14:34:44.079 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs]
+26-Apr-2024 14:34:44.098 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs] has finished in [19] ms
+26-Apr-2024 14:34:44.098 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples]
+26-Apr-2024 14:34:44.295 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples] has finished in [197] ms
+26-Apr-2024 14:34:44.295 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager]
+26-Apr-2024 14:34:44.314 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager] has finished in [19] ms
+26-Apr-2024 14:34:44.318 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:34:44.327 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1645] milliseconds
+26-Apr-2024 14:39:21.220 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+26-Apr-2024 14:39:21.220 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:39:21.223 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+26-Apr-2024 14:39:21.253 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:39:21.257 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:39:27.869 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.88
+26-Apr-2024 14:39:27.873 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 9 2024 13:22:30 UTC
+26-Apr-2024 14:39:27.873 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.88.0
+26-Apr-2024 14:39:27.873 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+26-Apr-2024 14:39:27.873 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.5.4-76060504-generic
+26-Apr-2024 14:39:27.873 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+26-Apr-2024 14:39:27.873 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-21-oracle-x64
+26-Apr-2024 14:39:27.873 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21+35-LTS-2513
+26-Apr-2024 14:39:27.874 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+26-Apr-2024 14:39:27.874 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:39:27.874 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:39:27.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+26-Apr-2024 14:39:27.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+26-Apr-2024 14:39:27.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+26-Apr-2024 14:39:27.881 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/conf/logging.properties
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:39:27.882 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 14:39:27.883 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/temp
+26-Apr-2024 14:39:27.884 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+26-Apr-2024 14:39:28.198 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:39:28.218 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [497] milliseconds
+26-Apr-2024 14:39:28.253 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+26-Apr-2024 14:39:28.253 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.88]
+26-Apr-2024 14:39:28.266 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:39:29.491 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:39:29.575 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [1,308] ms
+26-Apr-2024 14:39:29.575 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT]
+26-Apr-2024 14:39:29.597 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT] has finished in [22] ms
+26-Apr-2024 14:39:29.598 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager]
+26-Apr-2024 14:39:29.635 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager] has finished in [37] ms
+26-Apr-2024 14:39:29.635 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs]
+26-Apr-2024 14:39:29.655 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs] has finished in [20] ms
+26-Apr-2024 14:39:29.655 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples]
+26-Apr-2024 14:39:29.832 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples] has finished in [176] ms
+26-Apr-2024 14:39:29.832 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager]
+26-Apr-2024 14:39:29.852 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager] has finished in [19] ms
+26-Apr-2024 14:39:29.855 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 14:39:29.865 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1645] milliseconds
+26-Apr-2024 14:42:19.916 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:42:29.936 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:42:30.881 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:42:30.889 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [953] ms
+26-Apr-2024 14:43:00.896 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:43:00.901 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:43:01.757 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:43:01.765 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [864] ms
+26-Apr-2024 14:48:51.856 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 14:49:01.864 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 14:49:02.554 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 14:49:02.559 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [695] ms
+26-Apr-2024 15:35:43.537 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:35:43.551 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:35:44.308 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:35:44.315 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [764] ms
+26-Apr-2024 15:36:34.324 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:36:34.330 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:36:35.090 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:36:35.095 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [764] ms
+26-Apr-2024 15:41:15.154 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:41:15.164 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:41:15.906 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:41:15.910 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [746] ms
+26-Apr-2024 15:41:55.918 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:41:55.928 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:41:56.613 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:41:56.617 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [689] ms
+26-Apr-2024 15:42:36.624 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:42:36.628 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:42:37.349 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:42:37.354 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [725] ms
+26-Apr-2024 15:43:37.364 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:43:37.375 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:43:38.082 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:43:38.087 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [711] ms
+26-Apr-2024 15:44:08.094 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:44:08.102 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:44:08.829 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:44:08.834 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [732] ms
+26-Apr-2024 15:44:48.842 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:44:48.849 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:44:49.581 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:44:49.586 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [737] ms
+26-Apr-2024 15:46:49.606 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:46:49.616 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:46:50.353 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:46:50.358 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [742] ms
+26-Apr-2024 15:50:30.393 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:50:30.404 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:50:31.085 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:50:31.089 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [686] ms
+26-Apr-2024 15:53:21.119 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 15:53:41.135 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 15:53:41.776 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 15:53:41.780 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [645] ms
+26-Apr-2024 16:53:20.059 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.88
+26-Apr-2024 16:53:20.062 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 9 2024 13:22:30 UTC
+26-Apr-2024 16:53:20.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.88.0
+26-Apr-2024 16:53:20.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+26-Apr-2024 16:53:20.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.5.4-76060504-generic
+26-Apr-2024 16:53:20.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+26-Apr-2024 16:53:20.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-21-oracle-x64
+26-Apr-2024 16:53:20.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21+35-LTS-2513
+26-Apr-2024 16:53:20.063 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+26-Apr-2024 16:53:20.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 16:53:20.064 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 16:53:20.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+26-Apr-2024 16:53:20.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+26-Apr-2024 16:53:20.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+26-Apr-2024 16:53:20.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+26-Apr-2024 16:53:20.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/conf/logging.properties
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 16:53:20.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/temp
+26-Apr-2024 16:53:20.073 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+26-Apr-2024 16:53:20.398 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 16:53:20.409 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector["http-nio-8080"]]
+	org.apache.catalina.LifecycleException: Protocol handler initialization failed
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1012)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:578)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1068)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:127)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:686)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:723)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: java.net.BindException: Address already in use
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:565)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+		at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:268)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:223)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1359)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1372)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:654)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:75)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1010)
+		... 11 more
+26-Apr-2024 16:53:20.410 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [535] milliseconds
+26-Apr-2024 16:53:20.446 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+26-Apr-2024 16:53:20.446 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.88]
+26-Apr-2024 16:53:20.459 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 16:53:21.536 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 16:53:21.570 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [1,110] ms
+26-Apr-2024 16:53:21.570 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT]
+26-Apr-2024 16:53:21.594 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT] has finished in [24] ms
+26-Apr-2024 16:53:21.594 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager]
+26-Apr-2024 16:53:21.629 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager] has finished in [35] ms
+26-Apr-2024 16:53:21.630 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs]
+26-Apr-2024 16:53:21.649 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs] has finished in [18] ms
+26-Apr-2024 16:53:21.649 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples]
+26-Apr-2024 16:53:21.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples] has finished in [191] ms
+26-Apr-2024 16:53:21.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager]
+26-Apr-2024 16:53:21.860 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager] has finished in [19] ms
+26-Apr-2024 16:53:21.864 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1453] milliseconds
+26-Apr-2024 16:53:21.867 SEVERE [main] org.apache.catalina.core.StandardServer.await Failed to create server shutdown socket on address [localhost] and port [8005] (base port [8005] and offset [0])
+	java.net.BindException: Address already in use
+		at java.base/sun.nio.ch.Net.bind0(Native Method)
+		at java.base/sun.nio.ch.Net.bind(Net.java:565)
+		at java.base/sun.nio.ch.Net.bind(Net.java:554)
+		at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+		at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+		at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:591)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:825)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:773)
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+26-Apr-2024 16:53:21.867 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 16:53:21.867 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+26-Apr-2024 16:53:21.889 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 16:53:21.890 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 16:57:56.999 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 16:58:07.006 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 16:58:07.817 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 16:58:07.824 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [818] ms
+26-Apr-2024 18:21:42.707 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+26-Apr-2024 18:21:42.707 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 18:21:42.709 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+26-Apr-2024 18:21:42.719 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 18:21:42.723 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 19:13:55.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.88
+26-Apr-2024 19:13:55.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 9 2024 13:22:30 UTC
+26-Apr-2024 19:13:55.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.88.0
+26-Apr-2024 19:13:55.767 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+26-Apr-2024 19:13:55.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.5.4-76060504-generic
+26-Apr-2024 19:13:55.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+26-Apr-2024 19:13:55.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-21-oracle-x64
+26-Apr-2024 19:13:55.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21+35-LTS-2513
+26-Apr-2024 19:13:55.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+26-Apr-2024 19:13:55.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 19:13:55.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 19:13:55.774 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/conf/logging.properties
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+26-Apr-2024 19:13:55.775 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 19:13:55.776 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+26-Apr-2024 19:13:55.776 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/temp
+26-Apr-2024 19:13:55.777 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+26-Apr-2024 19:13:56.123 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 19:13:56.147 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [521] milliseconds
+26-Apr-2024 19:13:56.187 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+26-Apr-2024 19:13:56.187 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.88]
+26-Apr-2024 19:13:56.199 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:13:57.429 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:13:57.472 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [1,272] ms
+26-Apr-2024 19:13:57.472 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT]
+26-Apr-2024 19:13:57.491 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT] has finished in [19] ms
+26-Apr-2024 19:13:57.492 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager]
+26-Apr-2024 19:13:57.521 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager] has finished in [30] ms
+26-Apr-2024 19:13:57.521 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs]
+26-Apr-2024 19:13:57.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs] has finished in [15] ms
+26-Apr-2024 19:13:57.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples]
+26-Apr-2024 19:13:57.742 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples] has finished in [206] ms
+26-Apr-2024 19:13:57.743 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager]
+26-Apr-2024 19:13:57.763 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager] has finished in [19] ms
+26-Apr-2024 19:13:57.766 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 19:13:57.777 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1628] milliseconds
+26-Apr-2024 19:15:47.807 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:15:47.844 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:15:48.701 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:15:48.711 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [867] ms
+26-Apr-2024 19:22:18.808 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:22:18.840 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:22:19.660 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:22:19.666 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [826] ms
+26-Apr-2024 19:23:09.675 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:23:09.680 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:23:10.510 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:23:10.516 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [836] ms
+26-Apr-2024 19:23:50.523 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:24:00.529 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:24:01.232 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:24:01.238 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [709] ms
+26-Apr-2024 19:29:01.299 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:29:11.307 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:29:12.098 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:29:12.104 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [797] ms
+26-Apr-2024 19:30:52.126 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:31:02.135 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:31:02.942 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:31:02.947 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [812] ms
+26-Apr-2024 19:34:42.992 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:34:43.011 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:34:43.800 INFO [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:34:43.805 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [794] ms
+26-Apr-2024 19:39:13.855 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/webapp2]
+26-Apr-2024 19:39:23.861 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+26-Apr-2024 19:39:24.604 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+26-Apr-2024 19:39:24.610 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [749] ms
+26-Apr-2024 19:44:44.657 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+26-Apr-2024 19:44:44.657 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 19:44:44.660 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+26-Apr-2024 19:44:44.671 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+26-Apr-2024 19:44:44.684 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

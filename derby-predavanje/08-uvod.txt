@@ -1,0 +1,416 @@
+=========================================================================================================================================================
+= Upravitelj bazom podataka Apache Derby + Univerzalni GUI klijent za spajanje na bazu podataka
+=========================================================================================================================================================
+
+Vidi i napravi: 08-priprema.txt
+ 
+=========================================================================================================================================================
+= Upravitelj bazom podataka Apache Derby: načini rada
+=========================================================================================================================================================
+
+Upravitelj bazom podataka Apache Derby napisan je u programskom jeziku Java te je dostupna u biblioteci derby.jar. Aplikacije za komunikaciju s upraviteljem baze podataka trebaju upravljački program (driver). Upravitelj bazom podataka Apache Derby može se koristiti u dva načina rada.
+
+1) Ugrađeni način rada, u kojem se upravitelj pokreće u zasebnim dretvama unutar našeg programa, pa naš program i upravitelj mogu izravno komunicirati izravnim pozivanjem metoda. Međutim, kako u praksi ne želimo da naš program zna na koji način komunicira s upraviteljem, i dalje ćemo pisati program tako da se komunikacija obavlja kroz "sučelje", odnosno prikladan upravljački program, koji je u ovom slučaju primjerak razreda org.apache.derby.jdbc.EmbeddedDriver i dostupan je u biblioteci derbytools.jar. Koristimo li ovaj način rada s upraviteljem Apache Derby, u classpath ćemo morati uključiti oba jar-a.
+
+2) Mrežni način rada, u kojem se upravitelj pokreće kao zaseban program (odnosno proces) na računalu. Naš se program pokreće kao nezavisni proces, koji se potom na upravitelja spaja nekom od tehnologija koje služe za komunikaciju između procesa - primjerice, uporabom mrežnih tehnologija, odnosno protokola TCP. U tom scenariju, upravitelj bazom podataka Apache Derby pokreće se kao TCP-poslužitelj koji sluša na portu 1527; za pokretanje upravitelja kao poslužitelja trebamo derby.jar, derbynet.jar i derbytools.jar (vidi sličicu na početku http://db.apache.org/derby/papers/DerbyTut/ns_intro.html). Naša će aplikacija u tom slučaju biti TCP-klijent koji će se spojiti na poslužitelja i mrežom prenositi naredbe i preuzimati rezultate (i tipično trebati derbyclient.jar and derbytools.jar). Upravljački program koji nam u ovom slučaju treba je org.apache.derby.client.ClientAutoloadedDriver i smješten je u derbyclient.jar. Prilikom pisanja, prevođenja i pokretanja našeg programa taj jar je jedini koji nam je potreban (ne trebamo derby.jar!). Želimo li iskoristiti naprednije mehanizme (poput bazena veza - razred org.apache.derby.jdbc.ClientConnectionPoolDataSource), našem programu ponovno možemo dodati i derbytools.jar, jer se unutra nalazi programska implementacija bazena veza (spomenuti razred) koju možemo iskoristiti, kao i alternativni upravljački program org.apache.derby.jdbc.ClientDriver koji je zapravo samo izvedenica org.apache.derby.client.ClientAutoloadedDriver.
+
+Dodatno, Apache Derby podržava i nekoliko vrsta pohrane baza podataka - od "klasičnih" koje se pohranjuju u datoteke na disku, preko baza "samo-za-čitanje" koje su zapakirane u JAR-arhive, pa do privremenih memorijskih baza podataka koje sve podatke čuvaju u memoriji, i nestaju onog trenutka kada se upravitelj baze podataka ugasi. Mi ćemo se fokusirati samo na "klasične" baze podataka, a zainteresirani čitatelj više o ostalim vrstama može pronaći u službenoj dokumentaciji upravitelja.
+
+S obzirom da naša aplikacija izravno ne bira upravljački program koji će koristiti, već se to radi posredno kroz DriverManager, ovisno o načinu na koji koristimo upravitelja bazom podataka razlikovat će se oblik URL-a koji se koristi za spajanje na bazu. Ako koristimo ugrađeni način rada, evo primjera URL-ova:
+
+jdbc:derby:db1
+  -- spaja se na bazu "db1" koja je smještena u direktoriju u kojem Apache Derby smješta sve baze
+jdbc:derby:c:/databases/db1
+  -- spaja se na bazu db1 koja je fizički smještena u direktoriju c:/databases.
+
+Ako se želimo spojiti na mrežno pokrenuti poslužitelj, koristimo URL oblika:
+
+jdbc:derby://localhost:1527/MyDbTest;create=true;user=perica;password=pero
+
+Neovisno o načinu rada, u URL-u možemo poslati niz različitih atributa; popis s pojašnjenjima je dostupan (za znatiželjne - nije obavezno štivo):
+
+https://db.apache.org/derby/docs/10.0/manuals/develop/develop15.html
+
+=========================================================================================================================================================
+= Uporaba sa strane Java programera: kako su stvari osmišljene
+=========================================================================================================================================================
+
+Tipovi upravljačkih programa
+  Tip 1 — upravljački program koji JDBC pozive samo premapirava na neki drugi API za pristupanje bazi (npr. na ODBC); primjer je JDBC-ODBC most, koji se oslanja na nativne biblioteke i to nije portabilno (a često niti učinkovito).
+  Tip 2 — upravljački program koji je dijelom pisan u Javi, a dijelom se oslanja na nativni upravljački program za konkretnog upravitelja bazom podataka. Stoga može biti učinkovitiji, jer je svjestan specifičnosti nativne implementacije, ali nije portabilan.
+  Tip 3 — upravljački program pisan u cijelosti u Javi, ali koji se spaja (primjerice TCP-om) na nekog posrednika i njime komunicira protokolom koji nije specifičan za konkretnog upravitelja bazom podataka, a taj potom dalje komunicira s konkretnim upraviteljem baze podataka na za to specifičan način. Problem: učinkovitost; htjeli bismo izbjeći posrednika.
+  Tip 4 — upravljački program pisan u cijelosti u Javi koji (primjerice TCP-om) izravno komunicira s upraviteljem baze podataka.
+
+Zahtjev na upravljački program - mora imati statički inicijalizator koji primjerak upravljačkog programa registrira nad DriverManager-om:
+--------------------------------------------------------------------------
+package some.package;
+
+public class AcmeJdbcDriver implements java.sql.Driver {
+  static {
+    java.sql.DriverManager.registerDriver(new AcmeJdbcDriver());
+  }
+  ...
+}
+--------------------------------------------------------------------------
+
+Klijent tada u svojem programu treba na početku natjerati virtualni stroj da pokuša u memoriju učitati oktetni kod drivera (a time i okinuti izvođenje statičke inicijalizacije čime će se upravljački program registrirati nad DriverManager-om):
+--------------------------------------------------------------------------
+ public static void main(String ... args) {
+   Class.forName("some.package.AcmeJdbcDriver");
+   ...
+   Connection con = DriverManager.getConnection("...");
+   ...
+   con.close();
+ }
+--------------------------------------------------------------------------
+
+Od novijih verzija Jave, JAR-arhiva koja sadrži upravljački program, može ga navesti tekstovnoj datoteci META-INF/services/java.sql.Driver; npr. kod Apache Derbya, derbyclient.jar ima tu datoteku i njezin sadržaj je:
+--------------------------------------------------------------------------
+org.apache.derby.client.ClientAutoloadedDriver
+--------------------------------------------------------------------------
+što je puno ime upravljačkog programa. Kada prvi puta zatražimo od DriverManagera uspostavu veze, on će najprije preskenirati sve JAR-arhive u stazi, u svakoj potražiti ima li datoteku META-INF/services/java.sql.Driver, i ako ima, automatski u memoriju virtualnog stroja učitati tamo navedene razrede, pa tada klijent to ne mora raditi. U web-aplikacijama ovaj mehanizam ne radi na razini naše web-aplikacije, jer DriverManager ne vidi JAR-ove koji čine našu web-aplikaciju; tamo je potrebno ručno obaviti učitavanje razreda (ili koristiti neki pomoćni razred/biblioteku koja će to učiniti za nas).
+
+Za dobivanje veze prema bazi podataka DriverManager nudi porodicu statičkih metoda getConnection:
+public static Connection getConnection(String url, java.util.Properties info) throws SQLException { ... }
+public static Connection getConnection(String url, String user, String password) throws SQLException { ... }
+public static Connection getConnection(String url) throws SQLException { ... }
+ - sadrži petlju koja ide po svim registriranim driverima, i svaki redom pita da pokuša uspostaviti vezu
+ - ova metoda konceptualno je implementirana kao:
+--------------------------------------------------------------------------
+   for (var aDriver : registeredDrivers) {
+     Connection con = aDriver.connect(url, ...);
+     if(con!=null) return con;
+   }
+   throw new SQLException("No suitable driver found for "+ url);
+--------------------------------------------------------------------------
+
+DriverManager nudi čak i metodu kojom možemo doznati koji će driver obaviti uspostavu spoja za zadani URL:
+public static Driver getDriver(String url) throws SQLException { ... }
+koja je implementirana slično kao i getConnection, samo što ova slijedno svaki od upravljačkih programa pita prihvaća li on zadani URL.
+
+Umjesto izravne uporabe DriverManagera, JDBC specifikacija nudi još jedan mehanizam: sučelje DataSource:
+--------------------------------------------------------------------------
+public interface DataSource  extends CommonDataSource, Wrapper {
+  Connection getConnection() throws SQLException;
+  ...
+  Connection getConnection(String username, String password) throws SQLException;
+}
+--------------------------------------------------------------------------
+Ideja je omogućiti da objekt koji je primjerak razreda koji implementira ovo sučelje na jednom mjestu iskonfigurira (potencijalno čak i izvan naše aplikacije - čest scenarij u web-aplikacijama gdje sam poslužitelj može nuditi veze prema bazama podataka), te da aplikacija samo traži veze, bez da je svjesna na koju se točno bazu spaja, i s kojim parametrima (srugim riječima, omogućava se konfiguracija na jednom mjestu, a uporaba na drugom mjestu).
+
+Ako se oslonimo na sučelje DataSource, tada možemo imati mnoštvo različitih implementacija. Evo (konceptualno) jedne:
+--------------------------------------------------------------------------
+public class AskDriverManagerDataSource implements DataSource {
+  private String url;
+  public AskDriverManagerDataSource(String url) {
+    this.url = url;
+  }
+  public Connection getConnection() throws SQLException {
+    return DriverManager.getConnection(url);
+  }
+  ...
+}
+--------------------------------------------------------------------------
+
+Sada bi naš program mogao izgledati ovako (uz zanemarene provjeravane iznimke i sitne detalje):
+--------------------------------------------------------------------------
+public class Demo {
+  public static void main(String ... args) {
+    DataSource ds = new AskDriverManagerDataSource("...");
+    m1(ds);
+    m2(ds);
+  }
+  private static void m1(DataSource ds) {
+    Connection c = ds.getConnection();
+    ...
+    c.close();
+  }
+  private static void m2(DataSource ds) {
+    Connection c = ds.getConnection();
+    ...
+    c.close();
+  }
+}
+--------------------------------------------------------------------------
+
+Primijetite: metode m1() i m2() nemaju pojma na što se točno spajaju, i s kojim podatcima; one naprosto traže vezu i koriste je.
+
+Primijetite dalje, uz našu implementaciju DataSource-a, metode m1() i m2() će "ispod haube" zapravo završiti na pozivima DriverManager-a, koji će dva puta tražiti upravljački program da uspostavi vezu prema bazi podataka, što je vremenski skupo (posebice ako se to radi često - što je situacija u web-aplikacijama). Stoga se danas koriste implementacije koje su bazeni veza: korisniku se veza "iznajmi", a kad je on pokuša zatvoriti, ona se vrati u DataSource koji je na sljedeći poziv getConnection() ponovno može "iznajmiti". Nove veze stvarat će se samo ako se pozove getConnection() a DataSource nema pri ruci niti jednu slobodnu prethodno uspostavljenu vezu. Idemo pogledati kako se ovakvo ponašanje može ostvariti.
+
+----------------------------------------
+- Kako radi ConnectionPool?
+----------------------------------------
+
+Razmotrimo program:
+--------------------------------------------------------------------------
+DataSource pool = stvoriNekakoConnectionPool();
+
+Connection c1 = pool.getConnection();
+try(PreparedStatement p = c1.prepareStatement(...)) {...}
+c1.close();
+
+Connection c2 = pool.getConnection();
+try(PreparedStatement p = c2.prepareStatement(...)) {...}
+c2.close();
+--------------------------------------------------------------------------
+Ovo sve se tehnički može izvesti jednom "stvarno" uspostavljenom vezom. Kako bi bio implementiran razred čiji primjerak vraća naša metoda stvoriNekakoConnectionPool()? Što bi još trebalo napravati?
+
+----------------------------------------
+- Podrška transakcijama
+----------------------------------------
+
+Upravljači program koristimo za dobivanje veza. Svaka veza inicijalno je u takozvanom autocommit načinu rada, što znači da se svaka naredba zadana kroz vezu izvodi kao jedna nezavisna transakcija.
+
+Želimo li nekoliko uzastopnih naredbi izvesti u cijelosti atomarno (kao jednu transakciju), onda su koraci sljedeći:
+ 1) postaviti autocommit na false: con.setAutoCommit(false);
+ 2) zadati sve željene naredbe
+ 3) pozvati con.commit() (ako želimo završiti transakciju) ili con.rollback() (ako odustajemo)
+
+Primijetimo da je nakon toga veza i dalje u modu autocommit=false, pa je spremna za sljedećih nekoliko naredbi pa novi commit ili rollback. Ako se želimo vratiti na način rada jedna naredba, jedna transakcija, onda trebamo vratiti autocommit na true.
+
+Koja se razina zaštite koristi tijekom transakcijskog izvođenja naredbi definira se sa: 
+void setTransactionIsolation(int level);
+gdje razine mogu biti:
+TRANSACTION_NONE                - transakcije nisu podržane
+TRANSACTION_READ_UNCOMMITTED    - dopuštaju se  dirty reads, non-repeatable reads i phantom reads
+TRANSACTION_READ_COMMITTED      - spriječavaju se dirty reads; dopušta se non-repeatable reads i phantom reads.
+TRANSACTION_REPEATABLE_READ     - spriječavaju se dirty reads i non-repeatable reads; dopušta se phantom reads.
+TRANSACTION_SERIALIZABLE        - spriječavaju se dirty reads, non-repeatable reads i phantom reads.
+
+Podsjetimo se:
+ * dirty reads: transakcija je pročitala redak iz baze koji sadrži vrijednosti koje je neka druga transakcija upisala ali ta još nije commitana (možda odustane pa poništi tu promjenu, a mi smo je vidjeli i uzeli u obzir pri našoj obradi)
+ * non-repeatable reads: naša transakcija iz baze u dva navrata dohvaća isti redak, i vidi različite podatke unutra (primjerice, između prvog i drugog dohvata neka druga transakcija je promijenila podatke i uspješno commitala tu izmjenu)
+ * phantom reads: naša transakcija u dva navrata izvodi isti upit (primjerice, selektira podatke po nekom kriteriju) i u ta dva navrata dobiva različitu kombinaciju n-torki (manje ili više, jer je druga transakcija obrisala ili umetnula nove retke; ili čak isti broj ali neke različite retka jer je u međuvremenu neka druga transakcija promijenila vrijednosti po kojima filtriramo u upitu).
+
+Postavljanje razina zaštite bitno utječe na konkurentnost izvođenja više istovremenih upita, pa treba paziti što nam je stvarno potrebno. Npr.
+
+Ako više puta u našoj transakciji izvodimo:
+SELECT * FROM USERS WHERE JMBAG='0012345678'
+i gdje je JMBAG primarni ključ, ne može nam se dogoditi fantomsko čitanje (jer selektiramo jedan redak po primarnom ključu); može nam se dogoditi prljavo čitanje (ako to razina dopušta) odnosno non-repetable read. U ovakvom scenariju umjesto podizanja razine transakcije na TRANSACTION_REPEATABLE_READ problem možemo riješiti tako da ostanemo na TRANSACTION_READ_COMMITTED ali iskoristimo inačicu naredbe SELECT koja će redak zaključati:
+SELECT * FROM USERS WHERE JMBAG='0012345678' FOR UPDATE
+čime druga transakcija (koja je barem na razini TRANSACTION_READ_COMMITTED) neće moći isti redak niti pročitati niti promijeniti dok mi ne završimo, pa imamo "ponovivo-čitanje".
+
+Priča o interakciji razina transakcija i eksplicitnog zaključavanja različitim vrstama "lokota" je dosta kompleksna, i ovdje je nećemo obrađivati; samo ćemo spomenuti da SELECT može na različite načine zaključavati, pa tako npr. razmotrimo:
+SELECT * FROM USERS WHERE JMBAG='0012345678'
+SELECT * FROM USERS WHERE JMBAG='0012345678' FOR SHARE
+SELECT * FROM USERS WHERE JMBAG='0012345678' FOR UPDATE
+
+JDBC podržava i "podtransakcijsko" izvođenje (u smislu safepoint-a; pa unutar jedne transakcije određene točke izvođenja možemo posebno označiti i poništavati promjene napravljene nakon toga, ali i dalje ostati u transakciji) - nećemo pričati o tome.
+
+Konačno, JDBC podržava i sudjelovanje u distribuiranim transakcijama: situacija u kojoj aplikacija koristi više baza podataka i nad njima provodi operacije koje sve zajedno ili moraju u cijelosti uspjeti, ili izmjene treba otkazati. Ključna sučelja: Xid, XAConnection, XAResource, XADataSource. Specifičnosti ovakvog rada također nećemo razmatrati u okviru ovog kolegija.
+ 
+----------------------------------------
+- Slanje upita u bazu: Statement
+----------------------------------------
+
+Nudi nekoliko mehanizama zadavanja i izvođenja SQL naredbi te dohvata i obrade rezultata, kroz generičke metode porodice:
+boolean execute(String sql, ...);
+gdje ovisno o vrsti rezultata koji poslana naredba generira iste dalje možemo dohvatiti pozivima getResultSet() odnosno getUpdateCount(), a ako naredba vraća više rezultata (što mogu primjerice pozivi ugrađenih procedura), na sljedeće se prelazi s getMoreResults().
+
+Ako izvedena naredba vraća niz n-torki (primjerice, izvedemo SELECT nad nekom tablicom), te su n-torke dostupne kroz objekt tipa ResultSet, koji reprezentira kursor (specijalan tip iteratora koji ne vraća nove elemente kroz "return", već u sebi mijenja koji je element trenutni, i nudi gettere za dohvat njegovih dijelova).
+
+Imamo i specijalizacije metode execute prilagođene vrstama akcija koje se obavljaju u bazi:
+
+ResultSet executeQuery​(String sql);
+  - za izvođenje naredbe SELECT i obradu rezultata
+
+int executeUpdate​(String sql);
+  - za izvođenje naredbi INSERT (ako nas ne zanimaju generirani ključevi), DELETE i UPDATE te sličnih (CREATE / ALTER TABLE, CREATE INDEX, ...)
+int executeUpdate​(String sql, int autoGeneratedKeys);
+  - za izvođenje naredbe INSERT gdje možemo tražiti da nam se vrate generirani ključevi
+  - drugi parametar može biti:
+    Statement.RETURN_GENERATED_KEYS - tražimo da nam se dostave generirani ključevi
+    Statement.NO_GENERATED_KEYS - ne želimo da nam se vrate generirani ključevi
+  - ako smo tražili da nam se vrate generirani ključevi, nakon izvođenja naredbe iste možemo dohvatiti pozivom:
+    ResultSet getGeneratedKeys()
+    čime smo dobili jednu ili više n-torki generiranih ključeva;
+    -> jednu ili više, ovisno o tome koliko smo redaka umetnuli
+    -> svaki redak je općenito n-torka jer ključ može biti kompozitni
+
+Postoji i niz drugih metoda u koje sada nećemo ulaziti.
+
+Jednom stvoreni Statement kad smo s njime gotovi treba zatvoriti, pa kako Statement implementira AutoCloseable, tipičan način uporabe je:
+--------------------------------------------------------------------------
+try(Statement stmt = con.createStatement(...)) {
+ ...
+}
+--------------------------------------------------------------------------
+
+----------------------------------------
+- Prolaz kroz vraćene n-torke: ResultSet
+----------------------------------------
+
+Ako izvedena naredba vraća niz n-torki (primjerice, izvedemo SELECT nad nekom tablicom), te su n-torke dostupne kroz objekt tipa ResultSet, koji reprezentira kursor (specijalan tip iteratora koji ne vraća nove elemente kroz "return", već u sebi mijenja koji je element trenutni, i nudi gettere za dohvat njegovih dijelova). Jedan tipičan primjer uporabe:
+--------------------------------------------------------------------------
+Statement stmt = ...;
+stmt.execute("SELECT name, numberOfPages FROM books");
+ResultSet rset = stmt.getResultSet();
+while(rset.next()) {
+  String name = rset.getString(1);
+  int number = rset.getInt(2);
+  System.out.printf("Knjiga %s ima stranica %d%n", name, number);
+}
+rset.close();
+stmt.close();
+--------------------------------------------------------------------------
+Primijetimo, položaj kursora pri stvaranju je ISPRED prvog vraćenog retka; poziv rset.next() ga svaki puta pokušava pomaknuti na sljedeći, i vraća true ako je to uspjelo, odnosno false ako sljedećeg više nema. Pozivi rset.getString(...), rset.getInt(...), rset.getLong(...), ... operiraju nad stupcima trenutnog retka gdje numeracija ide od 1; umjesto numeracije, može se koristiti dohvat po imenima (koji je nešto sporiji).
+
+ResultSet nudi niz gettera koji su primitivi (tipa getInt(...)) i na temelju čega ne možemo doznati je li vrijednost u stupcu bila 0 ili NULL (metoda getInt će u oba slučaja vratiti 0). Ako nas zanima ta razlika, tada odmah nakon poziva nekog gettera možemo pozvati metodu wasNull() koja će nam vratiti true ako je prethodno čitanje očitalo vrijednost NULL, a false inače.
+
+Više informacija o samom ResultSet-u (koliko n-torka ima elemenata, koji su tipovi tih elemenata i slično) možemo dobiti iz objekta ResultSetMetaData kojeg dobijemo pozivom rset.getMetaData().
+
+Prethodno prikazani primjer je najjednostavniji, gdje vraćene retke "preskeniramo" od prvog prema zadnjem, svaki dohvatimo samo jednom i onda smo gotovi. Općenito, za ResultSet možemo specificirati nekoliko vrsta informacija:
+ 1) način prolaza kroz retke odnosno osjetljivost na promjene pri višestrukom prolasku kroz retke (getResultSetType()) 
+    ResultSet.TYPE_FORWARD_ONLY - proći ćemo samo jednom, od prvog zapisa prema zadnjem (default)
+    ResultSet.TYPE_SCROLL_INSENSITIVE - prolazit ćemo više puta, ali svaki puta želimo vidjeti isti niz podataka
+    ResultSet.TYPE_SCROLL_SENSITIVE - prolazit ćemo više puta, i ako su u međuvremenu podatci u bazi promijenjeni, to želimo vidjeti (npr. možda je netko dodao novi redak!)
+ 2) možemo li dohvaćene podatke ažurirati kroz ResultSet (getResultSetConcurrency())
+    ResultSet.CONCUR_READ_ONLY - ne možemo (default)
+    ResultSet.CONCUR_UPDATABLE - možemo
+ 3) koliko dugo se resultset čuva otvorenim (getResultSetHoldability())
+    ResultSet.CLOSE_CURSORS_AT_COMMIT - automatski zatvori ResultSet na commit transakcije
+    ResultSet.HOLD_CURSORS_OVER_COMMIT - ostavi ResultSet otvoren i nakon commita transakcije
+
+Ako je ResultSet skrolabilan (bilo da smo tražili ResultSet.TYPE_SCROLL_INSENSITIVE ili ResultSet.TYPE_SCROLL_SENSITIVE), onda nad njim možemo koristiti:
+    void beforeFirst();
+      - pozicioniraj se na redak prije prvog vraćenog
+    void afterLast();
+      - pozicioniraj se na redak nakon zadnjeg vraćenog
+    boolean absolute​(int row);
+      - ako je row pozitivan, kao aktivni redak postavlja redak koji se nalazi toliko row-redaka od "retka-prije-početka"; tako row=1 upravo znači skok na prvi vraćeni redak, ...
+      - ako je row negativan, kao aktivni redak postavlja redak koji se nalazi |row| redaka prije "retka-nakon-kraja"; tako row=-1 upravo znači skok na zadnji vraćeni redak, ...
+    boolean first();
+      - pozicioniraj se na prvi redak
+    boolean last();
+      - pozicioniraj se na zadnji redak
+    boolean next();
+      - pozicioniraj se na sljedeći redak
+    boolean previous();
+      - pozicioniraj se na prethodni redak
+    boolean relative​(int rows);
+      - pomakni se za zadani broj redaka (može biti pozitivan ili negativan) s obzirom na trenutni redak
+    boolean isAfterLast();
+      - jesmo li na retku nakon zadnjeg
+    boolean isBeforeFirst();
+      - jesmo li na retku prije prvog
+    boolean isFirst();
+      - jesmo li na prvom retku
+    boolean isLast();
+      - jesmo li na zadnjem retku
+
+Ako je ResultSet ažurirabilan (ResultSet.CONCUR_UPDATABLE), tada vrijednosti trenutnog retka možemo ažurirati porodicom metoda updateXXX(stupac, vrijednost), nakon čega to moramo poslati u bazu pozivom updateRow(); npr. idemo svim knjigama čije ime počinje s "Java" postaviti broj stranica na 500:
+--------------------------------------------------------------------------
+Statement stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+stmt.execute("SELECT name, numberOfPages FROM books");
+ResultSet rset = stmt.getResultSet();
+while(rset.next()) {
+  String name = rset.getString(1);
+  int number = rset.getInt(2);
+  if(name.startsWith("Java")) {
+    rset.updateInt(2, 500);
+    rset.updateRow();
+  }
+}
+rset.close();
+stmt.close();
+--------------------------------------------------------------------------
+Prije poziva metode rset.updateRow() od izmjena možemo odustati pozivom void cancelRowUpdates() što će vrijednosti u memoriji našeg trenutnog retka resetirati na one dohvaćene iz baze podataka (čitava priča u bazi podataka nema nikakvog efekta jer do tamo izmjene nisu niti stigle).
+
+Ako pri ažuriranju neki stupac želimo postaviti na NULL, to možemo učiti izravno kroz metode koje primaju objekte (primjerice, rset.setString(1, null)). Međutim, sa setterima za primitive to ne ide. Tada koristimo eksplicitnu metodu:
+rset.updateNull(stupac)
+primjerice:
+rset.updateNull(2)
+
+Trenutni redak možemo obrisati s:
+rest.deleteRow();
+
+Umetanje novih zapisa možemo postići pozicioniranjem na "poseban" redak za umetanje, ažuriranjem vrijednosti i slanjem naloga za umetanje tog novog retka u bazu:
+--------------------------------------------------------------------------
+Statement stmt = ...;
+stmt.execute("SELECT name, numberOfPages FROM books");
+ResultSet rset = stmt.getResultSet();
+...
+rset.moveToInsertRow();
+rset.updateString(1, "Uvod u programski jezik Java");
+rset.updateInt(600);
+rset.insertRow();
+...
+rset.close();
+stmt.close();
+--------------------------------------------------------------------------
+Ako je kursor bio u retku za umetanje, na zadnji "trenutni" redak u kojem smo bili prije toga tijekom prolaska kroz rezultate možemo se vratiti pozivom:
+void moveToCurrentRow();
+
+Važno: ako sami gradimo SQL-upit (a posebno ako dijelove lijepimo konkatenacijom stringova a oni dolaze od korisnika; primjerice, imamo web-aplikaciju gdje korisnik informacije unosti u formular, i mi to potom u servletu dohvatimo, i samo polijepimo u String koji predstavlja SQL-naredbu koja će to umetnuti u bazu), posebnu pažnju moramo posvetiti tome da se ne izložimo napadu poznatom kao SQL injection. Evo primjera. Korisnik u formular mora upisati svoje ime, i mi to želimo umetnuti u bazu. Naš kod u servletu je:
+--------------------------------------------------------------------------
+String ime = request.getParameter("ime");
+String sql = "INSERT INTO korisnici (name) VALUES ('"+ime+"')";
+--------------------------------------------------------------------------
+nadajući se da će korisnik primjerice kao svoje ime unijeti:
+
+Janko
+
+pa ćemo mi izgraditi naredbu:
+
+INSERT INTO korisnici (name) VALUES ('Janko')
+
+i izvesti je.
+
+No što će se dogoditi ako korisnik kao svoje ime unese:
+
+X'); DELETE FROM korisnici; UPDATE korisnici SET name='' WHERE name IN ('
+
+Primijetite, lijepljenjem stringova izgradit ćemo:
+
+INSERT INTO korisnici (name) VALUES ('X'); DELETE FROM korisnici; UPDATE korisnici SET name='' WHERE name IN ('')
+
+što su tri legalne SQL naredbe i koje rade ne baš poželjne radnje!
+
+Kako bismo ovo izbjegli, ili moramo sami paziti na to da se unose od korisnika prikladno escape-amo (što je dosta posla i sklono je pogreškama), ili za to možemo iskoristiti posebnu vrstu naredbe koja će to učiniti za nas: PreparedStatement.
+
+----------------------------------------
+- Napredna naredba: PreparedStament
+----------------------------------------
+
+JDBC nudi razred PreparedStament koji omogućava učinkovitiji i sigurniji rad s bazom podataka. Objekti se stvaraju nad vezom; evo primjera vezanog uz prethodni primjer SQL-injectiona:
+
+--------------------------------------------------------------------------
+String ime = request.getParameter("ime");
+try(PreparedStatement pst = con.prepareStatement("INSERT INTO korisnici (name) VALUES (?)")) {
+  pst.setString(1, ime);
+  pst.executeUpdate();
+}
+--------------------------------------------------------------------------
+Pri stvaranju objekta tipa PreparedStatement zadajemo samo predložak SQL-naredbe (primijetite upitnike na pojedinim mjestima - može ih biti više), nakon čega pozivima metoda setXXX(redniBrojUpitnika, vrijednost) svakom elementu koji je u predlošku bio definiran upitnikom specificiramo vrijednost (pri čemu će ona automatski biti prikladno escapeana gdje je to potrebno), i jednom kad smo definirali sve vrijednosti, zatražimo izvođenje naredbe (executeUpdate() za naredbe tipa INSERT, DELETE, UPDATE, ...; executeQuery() za SELECT).
+
+Ako pri zadavanju vrijednosti za neki od upitnika želimo postaviti vrijednost NULL, to možemo učiti izravno kroz metode koje primaju objekte (primjerice, rset.setString(1, null)). Međutim, sa setterima za primitive to ne ide. Tada koristimo eksplicitnu metodu:
+pst.setNull(stupac,tipVrijednosti)
+primjerice:
+pst.setNull(1, java.sql.Types.INTEGER);
+
+Dodatna prednost ove vrste naredbi jest da su to objekti koje poznaje i sama baza podataka, pa se predložak u bazu može poslati jednom, tamo prevesti, pripremiti plan njegovog izvođenja, isti optimirati i slično, i potom se u bazu mogu slati vrijednosti i pokretati izvođenje. Primjerice:
+--------------------------------------------------------------------------
+try(PreparedStatement pst = con.prepareStatement("INSERT INTO korisnici (name) VALUES (?)")) {
+  pst.setString(1, "Janko");
+  pst.executeUpdate();
+  pst.setString(1, "Ante");
+  pst.executeUpdate();
+  pst.setString(1, "Ivo");
+  pst.executeUpdate();
+}
+--------------------------------------------------------------------------
+Podržano je i "grupno" izvođenje:
+--------------------------------------------------------------------------
+try(PreparedStatement pst = con.prepareStatement("INSERT INTO korisnici (name) VALUES (?)")) {
+  pst.setString(1, "Janko");
+  pst.addBatch();
+  pst.setString(1, "Ante");
+  pst.addBatch();
+  pst.setString(1, "Ivo");
+  pst.addBatch();
+  pst.executeBatch();
+}
+--------------------------------------------------------------------------
+
+I ovime smo spremni za konkretne primjere.
+

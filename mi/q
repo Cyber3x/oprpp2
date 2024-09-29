@@ -1,0 +1,356 @@
+[38;5;238m───────┬────────────────────────────────────────────────────────────────────────────[0m
+       [38;5;238m│ [0mFile: [1mrjesenja.txt[0m
+[38;5;238m───────┼────────────────────────────────────────────────────────────────────────────[0m
+[38;5;238m   1[0m   [38;5;238m│[0m [38;2;248;248;242m# PRVI ZADATAK[0m
+[38;5;238m   2[0m   [38;5;238m│[0m 
+[38;5;238m   3[0m   [38;5;238m│[0m [38;2;248;248;242m### u workers.propertied dodana mapiranja[0m
+[38;5;238m   4[0m   [38;5;238m│[0m 
+[38;5;238m   5[0m   [38;5;238m│[0m [38;2;248;248;242m/mi/vrijeme = hr.fer.zemris.java.webserver.workers.VrijemeWorker[0m
+[38;5;238m   6[0m   [38;5;238m│[0m [38;2;248;248;242m/mi/square = hr.fer.zemris.java.webserver.workers.MiSquareBgWorker[0m
+[38;5;238m   7[0m   [38;5;238m│[0m [38;2;248;248;242m/mi/ellipse = hr.fer.zemris.java.webserver.workers.MiEllipseBgWorker[0m
+[38;5;238m   8[0m   [38;5;238m│[0m [38;2;248;248;242m/mi/setVar = hr.fer.zemris.java.webserver.workers.MiSetVariant[0m
+[38;5;238m   9[0m   [38;5;238m│[0m 
+[38;5;238m  10[0m   [38;5;238m│[0m [38;2;248;248;242m### dodana nova skripta mi.smscr u webroot/private/pages/mi.smscr [0m
+[38;5;238m  11[0m   [38;5;238m│[0m 
+[38;5;238m  12[0m   [38;5;238m│[0m [38;2;248;248;242m<!DOCTYPE html>[0m
+[38;5;238m  13[0m   [38;5;238m│[0m [38;2;248;248;242m<html>[0m
+[38;5;238m  14[0m   [38;5;238m│[0m [38;2;248;248;242m<head>[0m
+[38;5;238m  15[0m   [38;5;238m│[0m [38;2;248;248;242m    <title>MI</title>[0m
+[38;5;238m  16[0m   [38;5;238m│[0m [38;2;248;248;242m    <style>[0m
+[38;5;238m  17[0m   [38;5;238m│[0m [38;2;248;248;242m        body {[0m
+[38;5;238m  18[0m   [38;5;238m│[0m [38;2;248;248;242m         background-image: url("{$= "bgUrl" "" @tparamGet $}");[0m
+[38;5;238m  19[0m   [38;5;238m│[0m [38;2;248;248;242m         }[0m
+[38;5;238m  20[0m   [38;5;238m│[0m [38;2;248;248;242m    </style>[0m
+[38;5;238m  21[0m   [38;5;238m│[0m [38;2;248;248;242m</head>[0m
+[38;5;238m  22[0m   [38;5;238m│[0m [38;2;248;248;242m<body>[0m
+[38;5;238m  23[0m   [38;5;238m│[0m [38;2;248;248;242m    <h1>{$= "currentTime" "" @tparamGet $}</h1>[0m
+[38;5;238m  24[0m   [38;5;238m│[0m 
+[38;5;238m  25[0m   [38;5;238m│[0m [38;2;248;248;242m    <div>[0m
+[38;5;238m  26[0m   [38;5;238m│[0m [38;2;248;248;242m    <a href="/mi/setVar?bgVariant=ellipses">[0m
+[38;5;238m  27[0m   [38;5;238m│[0m [38;2;248;248;242m        <button>Želim prvu inačicu</button>[0m
+[38;5;238m  28[0m   [38;5;238m│[0m [38;2;248;248;242m    </a>[0m
+[38;5;238m  29[0m   [38;5;238m│[0m [38;2;248;248;242m    <a href="/mi/setVar?bgVariant=squares">[0m
+[38;5;238m  30[0m   [38;5;238m│[0m [38;2;248;248;242m        <button>Želim drugu inačicu</button>[0m
+[38;5;238m  31[0m   [38;5;238m│[0m [38;2;248;248;242m    </a>[0m
+[38;5;238m  32[0m   [38;5;238m│[0m [38;2;248;248;242m    <a href="/mi/setVar?bgVariant=random">[0m
+[38;5;238m  33[0m   [38;5;238m│[0m [38;2;248;248;242m        <button>Želim nasumičnu inačicu</button>[0m
+[38;5;238m  34[0m   [38;5;238m│[0m [38;2;248;248;242m    </a>[0m
+[38;5;238m  35[0m   [38;5;238m│[0m [38;2;248;248;242m    </div>[0m
+[38;5;238m  36[0m   [38;5;238m│[0m [38;2;248;248;242m</body>[0m
+[38;5;238m  37[0m   [38;5;238m│[0m [38;2;248;248;242m</html>[0m
+[38;5;238m  38[0m   [38;5;238m│[0m 
+[38;5;238m  39[0m   [38;5;238m│[0m [38;2;248;248;242m### implementirani novi workeri[0m
+[38;5;238m  40[0m   [38;5;238m│[0m 
+[38;5;238m  41[0m   [38;5;238m│[0m [38;2;248;248;242m## MiEllipseBgWorker[0m
+[38;5;238m  42[0m   [38;5;238m│[0m 
+[38;5;238m  43[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class MiEllipseBgWorker implements IWebWorker {[0m
+[38;5;238m  44[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final int BORDER_WIDTH = 10;[0m
+[38;5;238m  45[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m  46[0m   [38;5;238m│[0m [38;2;248;248;242m    public void processRequest(RequestContext context) throws IOException {[0m
+[38;5;238m  47[0m   [38;5;238m│[0m [38;2;248;248;242m        context.setMimeType("image/png");[0m
+[38;5;238m  48[0m   [38;5;238m│[0m [38;2;248;248;242m        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedI[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mmage.TYPE_3BYTE_BGR);[0m
+[38;5;238m  49[0m   [38;5;238m│[0m 
+[38;5;238m  50[0m   [38;5;238m│[0m [38;2;248;248;242m        Graphics2D g = bufferedImage.createGraphics();[0m
+[38;5;238m  51[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(Color.WHITE);[0m
+[38;5;238m  52[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillRect(0, 0, 100, 100);[0m
+[38;5;238m  53[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(MIUtils.generateRandomColor());[0m
+[38;5;238m  54[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillOval(0, 0, 100, 100);[0m
+[38;5;238m  55[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(MIUtils.generateRandomColor());[0m
+[38;5;238m  56[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillOval(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m- 2 * BORDER_WIDTH);[0m
+[38;5;238m  57[0m   [38;5;238m│[0m [38;2;248;248;242m        g.dispose();[0m
+[38;5;238m  58[0m   [38;5;238m│[0m 
+[38;5;238m  59[0m   [38;5;238m│[0m [38;2;248;248;242m        ByteArrayOutputStream bos = new ByteArrayOutputStream();[0m
+[38;5;238m  60[0m   [38;5;238m│[0m [38;2;248;248;242m        ImageIO.write(bufferedImage, "png", bos);[0m
+[38;5;238m  61[0m   [38;5;238m│[0m [38;2;248;248;242m        context.write(bos.toByteArray());[0m
+[38;5;238m  62[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m  63[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m  64[0m   [38;5;238m│[0m 
+[38;5;238m  65[0m   [38;5;238m│[0m [38;2;248;248;242m## MiSquareBgWorker[0m
+[38;5;238m  66[0m   [38;5;238m│[0m 
+[38;5;238m  67[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class MiSquareBgWorker implements IWebWorker {[0m
+[38;5;238m  68[0m   [38;5;238m│[0m 
+[38;5;238m  69[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final int BORDER_WIDTH = 5;[0m
+[38;5;238m  70[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m  71[0m   [38;5;238m│[0m [38;2;248;248;242m    public void processRequest(RequestContext context) throws IOException {[0m
+[38;5;238m  72[0m   [38;5;238m│[0m [38;2;248;248;242m        context.setMimeType("image/png");[0m
+[38;5;238m  73[0m   [38;5;238m│[0m [38;2;248;248;242m        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedI[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mmage.TYPE_3BYTE_BGR);[0m
+[38;5;238m  74[0m   [38;5;238m│[0m 
+[38;5;238m  75[0m   [38;5;238m│[0m [38;2;248;248;242m        Graphics2D g = bufferedImage.createGraphics();[0m
+[38;5;238m  76[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(MIUtils.generateRandomColor());[0m
+[38;5;238m  77[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillRect(0, 0, 100, 100);[0m
+[38;5;238m  78[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(MIUtils.generateRandomColor());[0m
+[38;5;238m  79[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillRect(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m- 2 * BORDER_WIDTH);[0m
+[38;5;238m  80[0m   [38;5;238m│[0m [38;2;248;248;242m        g.dispose();[0m
+[38;5;238m  81[0m   [38;5;238m│[0m 
+[38;5;238m  82[0m   [38;5;238m│[0m [38;2;248;248;242m        ByteArrayOutputStream bos = new ByteArrayOutputStream();[0m
+[38;5;238m  83[0m   [38;5;238m│[0m [38;2;248;248;242m        ImageIO.write(bufferedImage, "png", bos);[0m
+[38;5;238m  84[0m   [38;5;238m│[0m [38;2;248;248;242m        context.write(bos.toByteArray());[0m
+[38;5;238m  85[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m  86[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m  87[0m   [38;5;238m│[0m 
+[38;5;238m  88[0m   [38;5;238m│[0m [38;2;248;248;242m## MiSetVariant[0m
+[38;5;238m  89[0m   [38;5;238m│[0m 
+[38;5;238m  90[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class MiSetVariant implements IWebWorker {[0m
+[38;5;238m  91[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m  92[0m   [38;5;238m│[0m [38;2;248;248;242m    public void processRequest(RequestContext context) throws IOException {[0m
+[38;5;238m  93[0m   [38;5;238m│[0m [38;2;248;248;242m        String bgVariant = context.getParameter("bgVariant");[0m
+[38;5;238m  94[0m   [38;5;238m│[0m [38;2;248;248;242m        context.setPersistentParameter("bgVariant", bgVariant);[0m
+[38;5;238m  95[0m   [38;5;238m│[0m [38;2;248;248;242m        context.dispatch("/mi/vrijeme");[0m
+[38;5;238m  96[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m  97[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m  98[0m   [38;5;238m│[0m 
+[38;5;238m  99[0m   [38;5;238m│[0m [38;2;248;248;242m## VrijemeWorker[0m
+[38;5;238m 100[0m   [38;5;238m│[0m 
+[38;5;238m 101[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class VrijemeWorker implements IWebWorker {[0m
+[38;5;238m 102[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final String BG_SQUARES = "/mi/square";[0m
+[38;5;238m 103[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final String BG_ELLIPSES = "/mi/ellipse";[0m
+[38;5;238m 104[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m 105[0m   [38;5;238m│[0m [38;2;248;248;242m    public void processRequest(RequestContext context) throws IOException {[0m
+[38;5;238m 106[0m   [38;5;238m│[0m [38;2;248;248;242m        String bgVariant = context.getPersistentParameter("bgVariant");[0m
+[38;5;238m 107[0m   [38;5;238m│[0m 
+[38;5;238m 108[0m   [38;5;238m│[0m [38;2;248;248;242m        if (bgVariant == null) {[0m
+[38;5;238m 109[0m   [38;5;238m│[0m [38;2;248;248;242m            bgVariant = "renadom";[0m
+[38;5;238m 110[0m   [38;5;238m│[0m [38;2;248;248;242m        }[0m
+[38;5;238m 111[0m   [38;5;238m│[0m 
+[38;5;238m 112[0m   [38;5;238m│[0m [38;2;248;248;242m        switch (bgVariant) {[0m
+[38;5;238m 113[0m   [38;5;238m│[0m [38;2;248;248;242m            case "squares":[0m
+[38;5;238m 114[0m   [38;5;238m│[0m [38;2;248;248;242m                context.setTemporaryParameter("bgUrl", BG_SQUARES);[0m
+[38;5;238m 115[0m   [38;5;238m│[0m [38;2;248;248;242m                break;[0m
+[38;5;238m 116[0m   [38;5;238m│[0m [38;2;248;248;242m            case "ellipses":[0m
+[38;5;238m 117[0m   [38;5;238m│[0m [38;2;248;248;242m                context.setTemporaryParameter("bgUrl", BG_ELLIPSES);[0m
+[38;5;238m 118[0m   [38;5;238m│[0m [38;2;248;248;242m                break;[0m
+[38;5;238m 119[0m   [38;5;238m│[0m [38;2;248;248;242m            default:[0m
+[38;5;238m 120[0m   [38;5;238m│[0m [38;2;248;248;242m                if (new Random().nextBoolean()) {[0m
+[38;5;238m 121[0m   [38;5;238m│[0m [38;2;248;248;242m                    context.setTemporaryParameter("bgUrl", BG_SQUARES);[0m
+[38;5;238m 122[0m   [38;5;238m│[0m [38;2;248;248;242m                } else {[0m
+[38;5;238m 123[0m   [38;5;238m│[0m [38;2;248;248;242m                    context.setTemporaryParameter("bgUrl", BG_ELLIPSES);[0m
+[38;5;238m 124[0m   [38;5;238m│[0m [38;2;248;248;242m                }[0m
+[38;5;238m 125[0m   [38;5;238m│[0m [38;2;248;248;242m        }[0m
+[38;5;238m 126[0m   [38;5;238m│[0m 
+[38;5;238m 127[0m   [38;5;238m│[0m [38;2;248;248;242m        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");[0m
+[38;5;238m 128[0m   [38;5;238m│[0m [38;2;248;248;242m        String currentTime = sdf.format(new Date());[0m
+[38;5;238m 129[0m   [38;5;238m│[0m 
+[38;5;238m 130[0m   [38;5;238m│[0m [38;2;248;248;242m        context.setTemporaryParameter("currentTime", currentTime);[0m
+[38;5;238m 131[0m   [38;5;238m│[0m [38;2;248;248;242m        context.dispatch("/private/pages/mi.smscr");[0m
+[38;5;238m 132[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m 133[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m 134[0m   [38;5;238m│[0m 
+[38;5;238m 135[0m   [38;5;238m│[0m [38;2;248;248;242m### Dodana pomocna util klasa  MiUtils[0m
+[38;5;238m 136[0m   [38;5;238m│[0m 
+[38;5;238m 137[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class MIUtils {[0m
+[38;5;238m 138[0m   [38;5;238m│[0m [38;2;248;248;242m    public static Color generateRandomColor() {[0m
+[38;5;238m 139[0m   [38;5;238m│[0m [38;2;248;248;242m        Random r = new Random();[0m
+[38;5;238m 140[0m   [38;5;238m│[0m 
+[38;5;238m 141[0m   [38;5;238m│[0m [38;2;248;248;242m        int red = r.nextInt(256);[0m
+[38;5;238m 142[0m   [38;5;238m│[0m [38;2;248;248;242m        int green = r.nextInt(256);[0m
+[38;5;238m 143[0m   [38;5;238m│[0m [38;2;248;248;242m        int blue = r.nextInt(256);[0m
+[38;5;238m 144[0m   [38;5;238m│[0m 
+[38;5;238m 145[0m   [38;5;238m│[0m [38;2;248;248;242m        return new Color(red, green, blue);[0m
+[38;5;238m 146[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m 147[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m 148[0m   [38;5;238m│[0m 
+[38;5;238m 149[0m   [38;5;238m│[0m 
+[38;5;238m 150[0m   [38;5;238m│[0m [38;2;248;248;242m--------- DRUGI ZADATAK -------------[0m
+[38;5;238m 151[0m   [38;5;238m│[0m 
+[38;5;238m 152[0m   [38;5;238m│[0m [38;2;248;248;242m### definirana nova .jsp skripta pod WEB-INF/pages/vrijeme.jsp[0m
+[38;5;238m 153[0m   [38;5;238m│[0m 
+[38;5;238m 154[0m   [38;5;238m│[0m [38;2;248;248;242m<%@ page import="java.text.SimpleDateFormat" %>[0m
+[38;5;238m 155[0m   [38;5;238m│[0m [38;2;248;248;242m<%@ page import="java.util.Date" %>[0m
+[38;5;238m 156[0m   [38;5;238m│[0m 
+[38;5;238m 157[0m   [38;5;238m│[0m 
+[38;5;238m 158[0m   [38;5;238m│[0m [38;2;248;248;242m<%@ page contentType="text/html;charset=UTF-8" language="java" session="tru[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242me" %>[0m
+[38;5;238m 159[0m   [38;5;238m│[0m [38;2;248;248;242m<html>[0m
+[38;5;238m 160[0m   [38;5;238m│[0m [38;2;248;248;242m<head>[0m
+[38;5;238m 161[0m   [38;5;238m│[0m [38;2;248;248;242m    <title>Vrijeme</title>[0m
+[38;5;238m 162[0m   [38;5;238m│[0m [38;2;248;248;242m    <style>[0m
+[38;5;238m 163[0m   [38;5;238m│[0m [38;2;248;248;242m        body {[0m
+[38;5;238m 164[0m   [38;5;238m│[0m [38;2;248;248;242m            background: url("<%= request.getAttribute("bgUrl")%>");[0m
+[38;5;238m 165[0m   [38;5;238m│[0m [38;2;248;248;242m        }[0m
+[38;5;238m 166[0m   [38;5;238m│[0m [38;2;248;248;242m    </style>[0m
+[38;5;238m 167[0m   [38;5;238m│[0m [38;2;248;248;242m</head>[0m
+[38;5;238m 168[0m   [38;5;238m│[0m [38;2;248;248;242m<body>[0m
+[38;5;238m 169[0m   [38;5;238m│[0m [38;2;248;248;242m    <h1> <%=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())%[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m></h1>[0m
+[38;5;238m 170[0m   [38;5;238m│[0m 
+[38;5;238m 171[0m   [38;5;238m│[0m [38;2;248;248;242m    <div>[0m
+[38;5;238m 172[0m   [38;5;238m│[0m [38;2;248;248;242m        <a href="${pageContext.request.contextPath}/mi/setVar?bgVar=squares[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m"><button>Stalno kvadratiće</button></a>[0m
+[38;5;238m 173[0m   [38;5;238m│[0m [38;2;248;248;242m        <a href="${pageContext.request.contextPath}/mi/setVar?bgVar=ellipse[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242ms"><button>Stalno elipse</button></a>[0m
+[38;5;238m 174[0m   [38;5;238m│[0m [38;2;248;248;242m        <a href="${pageContext.request.contextPath}/mi/setVar?bgVar=random"[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m><button>Želim nasumično</button></a>[0m
+[38;5;238m 175[0m   [38;5;238m│[0m [38;2;248;248;242m    </div>[0m
+[38;5;238m 176[0m   [38;5;238m│[0m [38;2;248;248;242m</body>[0m
+[38;5;238m 177[0m   [38;5;238m│[0m [38;2;248;248;242m</html>[0m
+[38;5;238m 178[0m   [38;5;238m│[0m 
+[38;5;238m 179[0m   [38;5;238m│[0m 
+[38;5;238m 180[0m   [38;5;238m│[0m [38;2;248;248;242m### mapirani novi servleti na urlove[0m
+[38;5;238m 181[0m   [38;5;238m│[0m 
+[38;5;238m 182[0m   [38;5;238m│[0m [38;2;248;248;242m <servlet>[0m
+[38;5;238m 183[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>vrijeme</servlet-name>[0m
+[38;5;238m 184[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-class>hr.fer.oprpp2.servlets.mi.VrijemeServlet</servlet-cl[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mass>[0m
+[38;5;238m 185[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet>[0m
+[38;5;238m 186[0m   [38;5;238m│[0m 
+[38;5;238m 187[0m   [38;5;238m│[0m [38;2;248;248;242m    <servlet-mapping>[0m
+[38;5;238m 188[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>vrijeme</servlet-name>[0m
+[38;5;238m 189[0m   [38;5;238m│[0m [38;2;248;248;242m        <url-pattern>/mi/vrijeme</url-pattern>[0m
+[38;5;238m 190[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet-mapping>[0m
+[38;5;238m 191[0m   [38;5;238m│[0m 
+[38;5;238m 192[0m   [38;5;238m│[0m [38;2;248;248;242m    <servlet>[0m
+[38;5;238m 193[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>genElipses</servlet-name>[0m
+[38;5;238m 194[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-class>hr.fer.oprpp2.servlets.mi.Ellipses</servlet-class>[0m
+[38;5;238m 195[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet>[0m
+[38;5;238m 196[0m   [38;5;238m│[0m 
+[38;5;238m 197[0m   [38;5;238m│[0m [38;2;248;248;242m    <servlet-mapping>[0m
+[38;5;238m 198[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>genElipses</servlet-name>[0m
+[38;5;238m 199[0m   [38;5;238m│[0m [38;2;248;248;242m        <url-pattern>/mi/ellipses</url-pattern>[0m
+[38;5;238m 200[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet-mapping>[0m
+[38;5;238m 201[0m   [38;5;238m│[0m 
+[38;5;238m 202[0m   [38;5;238m│[0m [38;2;248;248;242m    <servlet>[0m
+[38;5;238m 203[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>genSquares</servlet-name>[0m
+[38;5;238m 204[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-class>hr.fer.oprpp2.servlets.mi.Squares</servlet-class>[0m
+[38;5;238m 205[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet>[0m
+[38;5;238m 206[0m   [38;5;238m│[0m 
+[38;5;238m 207[0m   [38;5;238m│[0m [38;2;248;248;242m    <servlet-mapping>[0m
+[38;5;238m 208[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>genSquares</servlet-name>[0m
+[38;5;238m 209[0m   [38;5;238m│[0m [38;2;248;248;242m        <url-pattern>/mi/squares</url-pattern>[0m
+[38;5;238m 210[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet-mapping>[0m
+[38;5;238m 211[0m   [38;5;238m│[0m 
+[38;5;238m 212[0m   [38;5;238m│[0m [38;2;248;248;242m    <servlet>[0m
+[38;5;238m 213[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>setVar</servlet-name>[0m
+[38;5;238m 214[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-class>hr.fer.oprpp2.servlets.mi.SetVar</servlet-class>[0m
+[38;5;238m 215[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet>[0m
+[38;5;238m 216[0m   [38;5;238m│[0m 
+[38;5;238m 217[0m   [38;5;238m│[0m [38;2;248;248;242m    <servlet-mapping>[0m
+[38;5;238m 218[0m   [38;5;238m│[0m [38;2;248;248;242m        <servlet-name>setVar</servlet-name>[0m
+[38;5;238m 219[0m   [38;5;238m│[0m [38;2;248;248;242m        <url-pattern>/mi/setVar</url-pattern>[0m
+[38;5;238m 220[0m   [38;5;238m│[0m [38;2;248;248;242m    </servlet-mapping>[0m
+[38;5;238m 221[0m   [38;5;238m│[0m 
+[38;5;238m 222[0m   [38;5;238m│[0m 
+[38;5;238m 223[0m   [38;5;238m│[0m [38;2;248;248;242m### izdađeni novi servleti za generiranje Elipsa[0m
+[38;5;238m 224[0m   [38;5;238m│[0m 
+[38;5;238m 225[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class Ellipses extends HttpServlet {[0m
+[38;5;238m 226[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final int BORDER_WIDTH = 10;[0m
+[38;5;238m 227[0m   [38;5;238m│[0m 
+[38;5;238m 228[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m 229[0m   [38;5;238m│[0m [38;2;248;248;242m    protected void doGet(HttpServletRequest req, HttpServletResponse resp) [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mthrows ServletException, IOException {[0m
+[38;5;238m 230[0m   [38;5;238m│[0m [38;2;248;248;242m        resp.setContentType("image/png");[0m
+[38;5;238m 231[0m   [38;5;238m│[0m [38;2;248;248;242m        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedI[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mmage.TYPE_3BYTE_BGR);[0m
+[38;5;238m 232[0m   [38;5;238m│[0m 
+[38;5;238m 233[0m   [38;5;238m│[0m [38;2;248;248;242m        Graphics2D g = bufferedImage.createGraphics();[0m
+[38;5;238m 234[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(Color.WHITE);[0m
+[38;5;238m 235[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillRect(0, 0, 100, 100);[0m
+[38;5;238m 236[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(Utils.generateRandomColor());[0m
+[38;5;238m 237[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillOval(0, 0, 100, 100);[0m
+[38;5;238m 238[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(Utils.generateRandomColor());[0m
+[38;5;238m 239[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillOval(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m- 2 * BORDER_WIDTH);[0m
+[38;5;238m 240[0m   [38;5;238m│[0m [38;2;248;248;242m        g.dispose();[0m
+[38;5;238m 241[0m   [38;5;238m│[0m 
+[38;5;238m 242[0m   [38;5;238m│[0m [38;2;248;248;242m        ByteArrayOutputStream bos = new ByteArrayOutputStream();[0m
+[38;5;238m 243[0m   [38;5;238m│[0m [38;2;248;248;242m        ImageIO.write(bufferedImage, "png", bos);[0m
+[38;5;238m 244[0m   [38;5;238m│[0m [38;2;248;248;242m        resp.setContentLength(bos.toByteArray().length);[0m
+[38;5;238m 245[0m   [38;5;238m│[0m [38;2;248;248;242m        resp.getOutputStream().write(bos.toByteArray());[0m
+[38;5;238m 246[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m 247[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m 248[0m   [38;5;238m│[0m 
+[38;5;238m 249[0m   [38;5;238m│[0m [38;2;248;248;242m### za generiranje kvadrata[0m
+[38;5;238m 250[0m   [38;5;238m│[0m 
+[38;5;238m 251[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class Squares extends HttpServlet {[0m
+[38;5;238m 252[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final int BORDER_WIDTH = 10;[0m
+[38;5;238m 253[0m   [38;5;238m│[0m 
+[38;5;238m 254[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m 255[0m   [38;5;238m│[0m [38;2;248;248;242m    protected void doGet(HttpServletRequest req, HttpServletResponse resp) [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mthrows ServletException, IOException {[0m
+[38;5;238m 256[0m   [38;5;238m│[0m [38;2;248;248;242m        resp.setContentType("image/png");[0m
+[38;5;238m 257[0m   [38;5;238m│[0m [38;2;248;248;242m        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedI[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mmage.TYPE_3BYTE_BGR);[0m
+[38;5;238m 258[0m   [38;5;238m│[0m 
+[38;5;238m 259[0m   [38;5;238m│[0m [38;2;248;248;242m        Graphics2D g = bufferedImage.createGraphics();[0m
+[38;5;238m 260[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(Utils.generateRandomColor());[0m
+[38;5;238m 261[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillRect(0, 0, 100, 100);[0m
+[38;5;238m 262[0m   [38;5;238m│[0m [38;2;248;248;242m        g.setColor(Utils.generateRandomColor());[0m
+[38;5;238m 263[0m   [38;5;238m│[0m [38;2;248;248;242m        g.fillRect(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m- 2 * BORDER_WIDTH);[0m
+[38;5;238m 264[0m   [38;5;238m│[0m [38;2;248;248;242m        g.dispose();[0m
+[38;5;238m 265[0m   [38;5;238m│[0m 
+[38;5;238m 266[0m   [38;5;238m│[0m [38;2;248;248;242m        ByteArrayOutputStream bos = new ByteArrayOutputStream();[0m
+[38;5;238m 267[0m   [38;5;238m│[0m [38;2;248;248;242m        ImageIO.write(bufferedImage, "png", bos);[0m
+[38;5;238m 268[0m   [38;5;238m│[0m [38;2;248;248;242m        resp.setContentLength(bos.toByteArray().length);[0m
+[38;5;238m 269[0m   [38;5;238m│[0m [38;2;248;248;242m        resp.getOutputStream().write(bos.toByteArray());[0m
+[38;5;238m 270[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m 271[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m 272[0m   [38;5;238m│[0m 
+[38;5;238m 273[0m   [38;5;238m│[0m [38;2;248;248;242m### glavni servlet za Vrijeme koji kasnije prosljeduje rendering jspu[0m
+[38;5;238m 274[0m   [38;5;238m│[0m 
+[38;5;238m 275[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class VrijemeServlet extends HttpServlet {[0m
+[38;5;238m 276[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m 277[0m   [38;5;238m│[0m [38;2;248;248;242m    protected void doGet(HttpServletRequest req, HttpServletResponse resp) [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mthrows ServletException, IOException {[0m
+[38;5;238m 278[0m   [38;5;238m│[0m [38;2;248;248;242m        String sessionBgUrl = (String) req.getSession().getAttribute("bgUrl[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m");[0m
+[38;5;238m 279[0m   [38;5;238m│[0m 
+[38;5;238m 280[0m   [38;5;238m│[0m [38;2;248;248;242m        if (sessionBgUrl == null) {[0m
+[38;5;238m 281[0m   [38;5;238m│[0m [38;2;248;248;242m            if (new Random().nextBoolean()) {[0m
+[38;5;238m 282[0m   [38;5;238m│[0m [38;2;248;248;242m                sessionBgUrl = req.getContextPath() + "/mi/squares";[0m
+[38;5;238m 283[0m   [38;5;238m│[0m [38;2;248;248;242m            } else {[0m
+[38;5;238m 284[0m   [38;5;238m│[0m [38;2;248;248;242m                sessionBgUrl = req.getContextPath() + "/mi/ellipses";[0m
+[38;5;238m 285[0m   [38;5;238m│[0m [38;2;248;248;242m            }[0m
+[38;5;238m 286[0m   [38;5;238m│[0m [38;2;248;248;242m        }[0m
+[38;5;238m 287[0m   [38;5;238m│[0m [38;2;248;248;242m        req.setAttribute("bgUrl", sessionBgUrl);[0m
+[38;5;238m 288[0m   [38;5;238m│[0m [38;2;248;248;242m        req.getRequestDispatcher("/WEB-INF/pages/vrijeme.jsp").forward(req,[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m resp);[0m
+[38;5;238m 289[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m 290[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m 291[0m   [38;5;238m│[0m 
+[38;5;238m 292[0m   [38;5;238m│[0m [38;2;248;248;242m### i SetVar servlet za promijenu preferenci korisnika[0m
+[38;5;238m 293[0m   [38;5;238m│[0m 
+[38;5;238m 294[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class SetVar extends HttpServlet {[0m
+[38;5;238m 295[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final String URL_SQUARES = "/mi/squares";[0m
+[38;5;238m 296[0m   [38;5;238m│[0m [38;2;248;248;242m    private static final String URL_ELLIPSES = "/mi/ellipses";[0m
+[38;5;238m 297[0m   [38;5;238m│[0m 
+[38;5;238m 298[0m   [38;5;238m│[0m [38;2;248;248;242m    @Override[0m
+[38;5;238m 299[0m   [38;5;238m│[0m [38;2;248;248;242m    protected void doGet(HttpServletRequest req, HttpServletResponse resp) [0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242mthrows ServletException, IOException {[0m
+[38;5;238m 300[0m   [38;5;238m│[0m 
+[38;5;238m 301[0m   [38;5;238m│[0m [38;2;248;248;242m        String bgVar = req.getParameter("bgVar");[0m
+[38;5;238m 302[0m   [38;5;238m│[0m 
+[38;5;238m 303[0m   [38;5;238m│[0m [38;2;248;248;242m        switch (bgVar) {[0m
+[38;5;238m 304[0m   [38;5;238m│[0m [38;2;248;248;242m            case "squares":[0m
+[38;5;238m 305[0m   [38;5;238m│[0m [38;2;248;248;242m                req.getSession().setAttribute("bgUrl", req.getContextPath()[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m + URL_SQUARES);[0m
+[38;5;238m 306[0m   [38;5;238m│[0m [38;2;248;248;242m                break;[0m
+[38;5;238m 307[0m   [38;5;238m│[0m [38;2;248;248;242m            case "ellipses":[0m
+[38;5;238m 308[0m   [38;5;238m│[0m [38;2;248;248;242m                req.getSession().setAttribute("bgUrl", req.getContextPath()[0m
+[38;5;238m    [0m   [38;5;238m│[0m [38;2;248;248;242m + URL_ELLIPSES);[0m
+[38;5;238m 309[0m   [38;5;238m│[0m [38;2;248;248;242m                break;[0m
+[38;5;238m 310[0m   [38;5;238m│[0m [38;2;248;248;242m            default:[0m
+[38;5;238m 311[0m   [38;5;238m│[0m [38;2;248;248;242m                req.getSession().removeAttribute("bgUrl");[0m
+[38;5;238m 312[0m   [38;5;238m│[0m [38;2;248;248;242m        }[0m
+[38;5;238m 313[0m   [38;5;238m│[0m 
+[38;5;238m 314[0m   [38;5;238m│[0m [38;2;248;248;242m        resp.sendRedirect(req.getContextPath() + "/mi/vrijeme");[0m
+[38;5;238m 315[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m 316[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m 317[0m   [38;5;238m│[0m 
+[38;5;238m 318[0m   [38;5;238m│[0m [38;2;248;248;242m### Util klasa za boje kao i u prvom zadatku[0m
+[38;5;238m 319[0m   [38;5;238m│[0m 
+[38;5;238m 320[0m   [38;5;238m│[0m [38;2;248;248;242mpublic class Utils {[0m
+[38;5;238m 321[0m   [38;5;238m│[0m [38;2;248;248;242m    public static Color generateRandomColor() {[0m
+[38;5;238m 322[0m   [38;5;238m│[0m [38;2;248;248;242m        Random r = new Random();[0m
+[38;5;238m 323[0m   [38;5;238m│[0m 
+[38;5;238m 324[0m   [38;5;238m│[0m [38;2;248;248;242m        int red = r.nextInt(256);[0m
+[38;5;238m 325[0m   [38;5;238m│[0m [38;2;248;248;242m        int green = r.nextInt(256);[0m
+[38;5;238m 326[0m   [38;5;238m│[0m [38;2;248;248;242m        int blue = r.nextInt(256);[0m
+[38;5;238m 327[0m   [38;5;238m│[0m 
+[38;5;238m 328[0m   [38;5;238m│[0m [38;2;248;248;242m        return new Color(red, green, blue);[0m
+[38;5;238m 329[0m   [38;5;238m│[0m [38;2;248;248;242m    }[0m
+[38;5;238m 330[0m   [38;5;238m│[0m [38;2;248;248;242m}[0m
+[38;5;238m───────┴────────────────────────────────────────────────────────────────────────────[0m

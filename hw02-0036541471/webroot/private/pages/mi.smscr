@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MI</title>
+    <style>
+    	body {
+    	 background-image: url("{$= "bgUrl" "" @tparamGet $}");
+    	 }
+    </style>
+</head>
+<body>
+    <h1>{$= "currentTime" "" @tparamGet $}</h1>
+
+    <div>
+    <a href="/mi/setVar?bgVariant=ellipses">
+    	<button>Želim prvu inačicu</button>
+	</a>
+ 	<a href="/mi/setVar?bgVariant=squares">
+    	<button>Želim drugu inačicu</button>
+	</a>
+ 	<a href="/mi/setVar?bgVariant=random">
+    	<button>Želim nasumičnu inačicu</button>
+	</a>
+    </div>
+</body>
+</html>

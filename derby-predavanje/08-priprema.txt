@@ -1,0 +1,33 @@
+=========================================================================================================================================================
+= Upravitelj bazom podataka Apache Derby
+=========================================================================================================================================================
+
+Stranica proizvođača:
+https://db.apache.org/derby/
+
+Na vrhu stranice pronaći kategoriju "Download" pa klik
+ - u sekciji "For Java 17 and Higher" kliknuti na posljednju inačicu (u trenutku pisanja ovog dokumenta to je 10.16.1.1)
+ - na stranici koja se otvori, skinuti ZIP-arhivu binarne distribucije (Linux: db-derby-10.16.1.1-bin.tar.gz; Windows: db-derby-10.16.1.1-bin.zip)
+ - raspakirati na disku
+ 
+Potom s Ferka iz repozitorija, dodatci 8. predavanju, skinuti derby-skripte.zip, raspakirati na disku (trebat ćete često koristiti direktorij koji dobijete pa to smjestite negdje prikladno) i potom napravite sve što piše u PROCITAJ-ME.TXT koja se nalazi u toj arhivi. Unutra je kompletna uputa kako pokrenuti upravitelja bazom podataka, iskonfigurirati ga da obavlja autentifikaciju i autorizaciju korisnika te kako stvoriti početnu praznu bazu podataka za naše aplikacije, zajedno s novim korisničkom računom za pristup toj bazi.
+ 
+=========================================================================================================================================================
+= Univerzalni GUI klijent za spajanje na bazu podataka
+=========================================================================================================================================================
+
+squirrelsql:
+ - grafički klijent napisan u Javi koji omogućava spajanje na različite baze podataka, zadavanje upita, pregledavanje rezultata i još niz drugih radnji
+ 
+Stranica proizvođača:
+https://squirrel-sql.sourceforge.io/
+
+Na toj stranici otići pred dno i pronaći sekciju: 'Available downloads are:'. Skinuti 'Install jar of SQuirreL 4.5.1 for Windows/Linux/others', što će skinuti JAR-arhivu squirrel-sql-4.5.1-standard.jar. Prema uputi koja je na početnoj stranici odmah ispod linkova (sekcija 'Installation:'), pokrenite taj program. Radi se o installeru koji će Vas kroz grafičko korisničko sučelje pitati gdje želite instalirati program (odaberite neko prikladno mjesto). Potom će ponuditi popis komponenti koje treba instalirati. Uz komponente 'Base' i 'Standard' koje su automatski uključene, uključite još i "Optional Plugin - Derby". Potom pritisnite 'Next' i dovršite instalaciju.
+
+Iz direktorija u kojem ste instalirali squirrelsql klijenta, isti se pokreće iz naredbenog retka:
+Linux:   . squirrel-sql.sh
+Windows: squirrel-sql.bat
+
+- mali tutorijal za znatiželjne, kako povezati squirrelsql s bazom Apache Derby (pisan za relativno stare verzije, ali i dalje ima smisla); nije nužno pročitati, pokazat ćemo bitno na predavanju
+http://db.apache.org/derby/integrate/SQuirreL_Derby.html
+

@@ -1,0 +1,12 @@
+-- inicijalizacija okruzenja: stvaranje baze podataka koju derby koristi za korisnicke accounte --
+connect 'jdbc:derby://localhost:1527/credentialsDB;user=sa;password=sapwd22;create=true';
+disconnect;
+
+-- stvaranje baze baza1DB i novog korisnika koji ce se moci spajati na tu bazu --
+connect 'jdbc:derby://localhost:1527/baza1DB;user=sa;password=sapwd22;create=true';
+CALL SYSCS_UTIL.SYSCS_CREATE_USER('perica', 'pero');
+CALL SYSCS_UTIL.SYSCS_SET_DATABASE_PROPERTY('derby.database.fullAccessUsers', 'perica');
+disconnect;
+
+-- primjer spajanja tog novog korisnika na bazu baza1DB --
+connect 'jdbc:derby://localhost:1527/baza1DB;user=perica;password=pero';

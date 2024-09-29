@@ -1,0 +1,14 @@
+Vote for your favorite band.,What is your favorite band?
+The Beatles,link to yt
+Queen,some other link
+The Marcels,he is now here
+The Kooks,link here
+Nipplepeople,link here
+
+Favorite animal?,What animal is the superior one?
+Cats,cat image
+Dogs,dog image
+Fish,fish img
+Parrots,parrot img
+Pigs,pig img
+Tiger,tiger img

@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Color not updated</title>
+    <style>
+        body {background-color: #{$= "background" "7f7f7f" @tparamGet $};}
+    </style>
+    </head>
+<body>
+<h1>{$= "mess" "" @tparamGet $}</h1>
+<a href="/index2.html">Take me home</a>
+</body>
+</html>

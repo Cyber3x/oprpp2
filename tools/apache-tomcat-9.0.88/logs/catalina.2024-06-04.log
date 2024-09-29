@@ -1,0 +1,219 @@
+04-Jun-2024 17:28:21.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.88
+04-Jun-2024 17:28:21.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Apr 9 2024 13:22:30 UTC
+04-Jun-2024 17:28:21.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.88.0
+04-Jun-2024 17:28:21.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+04-Jun-2024 17:28:21.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.5.4-76060504-generic
+04-Jun-2024 17:28:21.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+04-Jun-2024 17:28:21.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk-21-oracle-x64
+04-Jun-2024 17:28:21.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21+35-LTS-2513
+04-Jun-2024 17:28:21.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+04-Jun-2024 17:28:21.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+04-Jun-2024 17:28:21.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+04-Jun-2024 17:28:21.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-Jun-2024 17:28:21.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-Jun-2024 17:28:21.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-Jun-2024 17:28:21.464 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-Jun-2024 17:28:21.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-Jun-2024 17:28:21.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/conf/logging.properties
+04-Jun-2024 17:28:21.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Jun-2024 17:28:21.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-Jun-2024 17:28:21.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-Jun-2024 17:28:21.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-Jun-2024 17:28:21.466 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+04-Jun-2024 17:28:21.466 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+04-Jun-2024 17:28:21.466 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88
+04-Jun-2024 17:28:21.466 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/temp
+04-Jun-2024 17:28:21.468 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/lib/x86_64-linux-gnu/libasound.so.2:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+04-Jun-2024 17:28:21.868 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+04-Jun-2024 17:28:21.898 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [686] milliseconds
+04-Jun-2024 17:28:21.950 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-Jun-2024 17:28:21.950 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.88]
+04-Jun-2024 17:28:21.966 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/voting-app.war]
+04-Jun-2024 17:28:21.981 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/voting-app] was found with a last modified time that did not match the associated WAR. It will be deleted.
+04-Jun-2024 17:28:23.554 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jun-2024 17:28:53.943 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file
+04-Jun-2024 17:28:53.953 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal Context [/voting-app] startup failed due to previous errors
+04-Jun-2024 17:28:53.958 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [voting-app] registered the JDBC driver [org.apache.derby.client.ClientAutoloadedDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+04-Jun-2024 17:28:53.958 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting-app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r8353c1b38bh2|3684d2c0]-AdminTaskTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ java.base/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base/java.util.TimerThread.run(Timer.java:516)
+04-Jun-2024 17:28:53.959 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting-app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r8353c1b38bh2|3684d2c0]-HelperThread-#0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:683)
+04-Jun-2024 17:28:53.959 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting-app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r8353c1b38bh2|3684d2c0]-HelperThread-#1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:683)
+04-Jun-2024 17:28:53.959 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting-app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r8353c1b38bh2|3684d2c0]-HelperThread-#2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:683)
+04-Jun-2024 17:28:53.966 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/voting-app.war] has finished in [32,000] ms
+04-Jun-2024 17:28:53.968 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war]
+04-Jun-2024 17:28:54.742 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jun-2024 17:28:54.761 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/webapp2.war] has finished in [792] ms
+04-Jun-2024 17:28:54.761 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/hw04_0036541471_war]
+04-Jun-2024 17:28:55.352 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jun-2024 17:28:55.379 INFO [MLog-Init-Reporter] com.mchange.v2.log.MLog. MLog clients using java 1.4+ standard logging.
+04-Jun-2024 17:28:55.408 INFO [main] com.mchange.v2.c3p0.C3P0Registry. Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+04-Jun-2024 17:28:55.409 WARNING [main] com.mchange.v2.c3p0.management.ActiveManagementCoordinator. A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+04-Jun-2024 17:28:55.446 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/hw04_0036541471_war] has finished in [685] ms
+04-Jun-2024 17:28:55.447 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/voting_app]
+04-Jun-2024 17:28:56.033 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+04-Jun-2024 17:28:56.068 INFO [MLog-Init-Reporter] com.mchange.v2.log.MLog. MLog clients using java 1.4+ standard logging.
+04-Jun-2024 17:28:56.107 INFO [main] com.mchange.v2.c3p0.C3P0Registry. Initializing c3p0-0.9.5.5 [built 11-December-2019 22:18:33 -0800; debug? true; trace: 10]
+04-Jun-2024 17:28:56.108 WARNING [main] com.mchange.v2.c3p0.management.ActiveManagementCoordinator. A C3P0Registry mbean is already registered. This probably means that an application using c3p0 was undeployed, but not all PooledDataSources were closed prior to undeployment. This may lead to resource leaks over time. Please take care to close all PooledDataSources.
+04-Jun-2024 17:28:56.194 INFO [main] com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource. Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfsxb31r83u3l16fiurx|132e0e20, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.apache.derby.client.ClientAutoloadedDriver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfsxb31r83u3l16fiurx|132e0e20, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:derby://localhost:1527/votingDB, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+04-Jun-2024 17:29:26.320 WARNING [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#2] com.mchange.v2.resourcepool.BasicResourcePool. com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@1cdeec80 -- Acquisition Attempt Failed!!! Clearing pending acquires. While trying to acquire a needed new resource, we failed to succeed more than the maximum number of allowed acquisition attempts (30). Last acquisition attempt exception: 
+	java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error connecting to server localhost on port 1,527 with message Connection refused.
+		at org.apache.derby.client.am.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:74)
+		at org.apache.derby.client.am.SqlException.getSQLException(SqlException.java:325)
+		at org.apache.derby.client.ClientAutoloadedDriver.connect(ClientAutoloadedDriver.java:177)
+		at com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		at com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+		at com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+		at com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		at com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+		at com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Caused by: ERROR 08001: java.net.ConnectException : Error connecting to server localhost on port 1,527 with message Connection refused.
+		at org.apache.derby.client.net.NetAgent.<init>(NetAgent.java:150)
+		at org.apache.derby.client.net.NetConnection.newAgent_(NetConnection.java:972)
+		at org.apache.derby.client.am.ClientConnection.<init>(ClientConnection.java:361)
+		at org.apache.derby.client.net.NetConnection.<init>(NetConnection.java:198)
+		at org.apache.derby.client.net.ClientJDBCObjectFactoryImpl.newNetConnection(ClientJDBCObjectFactoryImpl.java:278)
+		at org.apache.derby.client.ClientAutoloadedDriver.connect(ClientAutoloadedDriver.java:170)
+		... 9 more
+	Caused by: java.net.ConnectException: Connection refused
+		at java.base/sun.nio.ch.Net.connect0(Native Method)
+		at java.base/sun.nio.ch.Net.connect(Net.java:589)
+		at java.base/sun.nio.ch.Net.connect(Net.java:578)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at java.base/java.net.Socket.connect(Socket.java:686)
+		at java.base/java.net.Socket.<init>(Socket.java:555)
+		at java.base/java.net.Socket.<init>(Socket.java:324)
+		at java.base/javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:267)
+		at org.apache.derby.client.net.OpenSocketAction.run(OpenSocketAction.java:119)
+		at org.apache.derby.client.net.NetAgent.<init>(NetAgent.java:144)
+		... 14 more
+04-Jun-2024 17:29:26.320 WARNING [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#0] com.mchange.v2.resourcepool.BasicResourcePool. com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@7fa82996 -- Acquisition Attempt Failed!!! Clearing pending acquires. While trying to acquire a needed new resource, we failed to succeed more than the maximum number of allowed acquisition attempts (30). Last acquisition attempt exception: 
+	java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error connecting to server localhost on port 1,527 with message Connection refused.
+		at org.apache.derby.client.am.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:74)
+		at org.apache.derby.client.am.SqlException.getSQLException(SqlException.java:325)
+		at org.apache.derby.client.ClientAutoloadedDriver.connect(ClientAutoloadedDriver.java:177)
+		at com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		at com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+		at com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+		at com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		at com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+		at com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Caused by: ERROR 08001: java.net.ConnectException : Error connecting to server localhost on port 1,527 with message Connection refused.
+		at org.apache.derby.client.net.NetAgent.<init>(NetAgent.java:150)
+		at org.apache.derby.client.net.NetConnection.newAgent_(NetConnection.java:972)
+		at org.apache.derby.client.am.ClientConnection.<init>(ClientConnection.java:361)
+		at org.apache.derby.client.net.NetConnection.<init>(NetConnection.java:198)
+		at org.apache.derby.client.net.ClientJDBCObjectFactoryImpl.newNetConnection(ClientJDBCObjectFactoryImpl.java:278)
+		at org.apache.derby.client.ClientAutoloadedDriver.connect(ClientAutoloadedDriver.java:170)
+		... 9 more
+	Caused by: java.net.ConnectException: Connection refused
+		at java.base/sun.nio.ch.Net.connect0(Native Method)
+		at java.base/sun.nio.ch.Net.connect(Net.java:589)
+		at java.base/sun.nio.ch.Net.connect(Net.java:578)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at java.base/java.net.Socket.connect(Socket.java:686)
+		at java.base/java.net.Socket.<init>(Socket.java:555)
+		at java.base/java.net.Socket.<init>(Socket.java:324)
+		at java.base/javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:267)
+		at org.apache.derby.client.net.OpenSocketAction.run(OpenSocketAction.java:119)
+		at org.apache.derby.client.net.NetAgent.<init>(NetAgent.java:144)
+		... 14 more
+04-Jun-2024 17:29:26.320 WARNING [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#1] com.mchange.v2.resourcepool.BasicResourcePool. com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask@6e9ebad5 -- Acquisition Attempt Failed!!! Clearing pending acquires. While trying to acquire a needed new resource, we failed to succeed more than the maximum number of allowed acquisition attempts (30). Last acquisition attempt exception: 
+	java.sql.SQLNonTransientConnectionException: java.net.ConnectException : Error connecting to server localhost on port 1,527 with message Connection refused.
+		at org.apache.derby.client.am.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:74)
+		at org.apache.derby.client.am.SqlException.getSQLException(SqlException.java:325)
+		at org.apache.derby.client.ClientAutoloadedDriver.connect(ClientAutoloadedDriver.java:177)
+		at com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:175)
+		at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:220)
+		at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:206)
+		at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:203)
+		at com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:1176)
+		at com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:1163)
+		at com.mchange.v2.resourcepool.BasicResourcePool.access$700(BasicResourcePool.java:44)
+		at com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:1908)
+		at com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:696)
+	Caused by: ERROR 08001: java.net.ConnectException : Error connecting to server localhost on port 1,527 with message Connection refused.
+		at org.apache.derby.client.net.NetAgent.<init>(NetAgent.java:150)
+		at org.apache.derby.client.net.NetConnection.newAgent_(NetConnection.java:972)
+		at org.apache.derby.client.am.ClientConnection.<init>(ClientConnection.java:361)
+		at org.apache.derby.client.net.NetConnection.<init>(NetConnection.java:198)
+		at org.apache.derby.client.net.ClientJDBCObjectFactoryImpl.newNetConnection(ClientJDBCObjectFactoryImpl.java:278)
+		at org.apache.derby.client.ClientAutoloadedDriver.connect(ClientAutoloadedDriver.java:170)
+		... 9 more
+	Caused by: java.net.ConnectException: Connection refused
+		at java.base/sun.nio.ch.Net.connect0(Native Method)
+		at java.base/sun.nio.ch.Net.connect(Net.java:589)
+		at java.base/sun.nio.ch.Net.connect(Net.java:578)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:751)
+		at java.base/java.net.Socket.connect(Socket.java:686)
+		at java.base/java.net.Socket.<init>(Socket.java:555)
+		at java.base/java.net.Socket.<init>(Socket.java:324)
+		at java.base/javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:267)
+		at org.apache.derby.client.net.OpenSocketAction.run(OpenSocketAction.java:119)
+		at org.apache.derby.client.net.NetAgent.<init>(NetAgent.java:144)
+		... 14 more
+04-Jun-2024 17:29:26.323 WARNING [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#0] com.mchange.v2.resourcepool.BasicResourcePool. Having failed to acquire a resource, com.mchange.v2.resourcepool.BasicResourcePool@4483da9 is interrupting all Threads waiting on a resource to check out. Will try again in response to new client requests.
+04-Jun-2024 17:29:26.327 WARNING [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#2] com.mchange.v2.resourcepool.BasicResourcePool. Having failed to acquire a resource, com.mchange.v2.resourcepool.BasicResourcePool@4483da9 is interrupting all Threads waiting on a resource to check out. Will try again in response to new client requests.
+04-Jun-2024 17:29:26.327 WARNING [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#1] com.mchange.v2.resourcepool.BasicResourcePool. Having failed to acquire a resource, com.mchange.v2.resourcepool.BasicResourcePool@4483da9 is interrupting all Threads waiting on a resource to check out. Will try again in response to new client requests.
+04-Jun-2024 17:29:26.334 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file
+04-Jun-2024 17:29:26.337 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal Context [/voting_app] startup failed due to previous errors
+04-Jun-2024 17:29:26.343 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [voting_app] registered the JDBC driver [org.apache.derby.client.ClientAutoloadedDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+04-Jun-2024 17:29:26.344 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting_app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-AdminTaskTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ java.base/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base/java.util.TimerThread.run(Timer.java:516)
+04-Jun-2024 17:29:26.344 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting_app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:683)
+04-Jun-2024 17:29:26.345 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting_app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:683)
+04-Jun-2024 17:29:26.346 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [voting_app] appears to have started a thread named [C3P0PooledConnectionPoolManager[identityToken->z8kfsxb31r83u3l16fiurx|132e0e20]-HelperThread-#2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Object.wait0(Native Method)
+ java.base/java.lang.Object.wait(Object.java:366)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:683)
+04-Jun-2024 17:29:26.349 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/voting_app] has finished in [30,901] ms
+04-Jun-2024 17:29:26.349 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT]
+04-Jun-2024 17:29:26.369 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/ROOT] has finished in [19] ms
+04-Jun-2024 17:29:26.369 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager]
+04-Jun-2024 17:29:26.397 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/host-manager] has finished in [28] ms
+04-Jun-2024 17:29:26.397 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs]
+04-Jun-2024 17:29:26.415 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/docs] has finished in [17] ms
+04-Jun-2024 17:29:26.415 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples]
+04-Jun-2024 17:29:26.578 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/examples] has finished in [163] ms
+04-Jun-2024 17:29:26.579 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager]
+04-Jun-2024 17:29:26.600 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/home/cyber/faks/sem6/oprpp2/tools/apache-tomcat-9.0.88/webapps/manager] has finished in [22] ms
+04-Jun-2024 17:29:26.604 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+04-Jun-2024 17:29:26.616 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [64716] milliseconds
+04-Jun-2024 19:50:01.034 WARNING [main] org.apache.catalina.core.StandardServer.await Invalid shutdown command [] received
+04-Jun-2024 19:50:18.870 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+04-Jun-2024 19:50:18.871 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+04-Jun-2024 19:50:18.872 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+04-Jun-2024 19:50:18.895 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+04-Jun-2024 19:50:18.907 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

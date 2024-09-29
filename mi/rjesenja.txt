@@ -1,0 +1,330 @@
+# PRVI ZADATAK
+
+### u workers.propertied dodana mapiranja
+
+/mi/vrijeme = hr.fer.zemris.java.webserver.workers.VrijemeWorker
+/mi/square = hr.fer.zemris.java.webserver.workers.MiSquareBgWorker
+/mi/ellipse = hr.fer.zemris.java.webserver.workers.MiEllipseBgWorker
+/mi/setVar = hr.fer.zemris.java.webserver.workers.MiSetVariant
+
+### dodana nova skripta mi.smscr u webroot/private/pages/mi.smscr 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MI</title>
+    <style>
+    	body {
+    	 background-image: url("{$= "bgUrl" "" @tparamGet $}");
+    	 }
+    </style>
+</head>
+<body>
+    <h1>{$= "currentTime" "" @tparamGet $}</h1>
+
+    <div>
+    <a href="/mi/setVar?bgVariant=ellipses">
+    	<button>Želim prvu inačicu</button>
+	</a>
+ 	<a href="/mi/setVar?bgVariant=squares">
+    	<button>Želim drugu inačicu</button>
+	</a>
+ 	<a href="/mi/setVar?bgVariant=random">
+    	<button>Želim nasumičnu inačicu</button>
+	</a>
+    </div>
+</body>
+</html>
+
+### implementirani novi workeri
+
+## MiEllipseBgWorker
+
+public class MiEllipseBgWorker implements IWebWorker {
+    private static final int BORDER_WIDTH = 10;
+    @Override
+    public void processRequest(RequestContext context) throws IOException {
+        context.setMimeType("image/png");
+        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);
+
+        Graphics2D g = bufferedImage.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 100, 100);
+        g.setColor(MIUtils.generateRandomColor());
+        g.fillOval(0, 0, 100, 100);
+        g.setColor(MIUtils.generateRandomColor());
+        g.fillOval(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 - 2 * BORDER_WIDTH);
+        g.dispose();
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, "png", bos);
+        context.write(bos.toByteArray());
+    }
+}
+
+## MiSquareBgWorker
+
+public class MiSquareBgWorker implements IWebWorker {
+
+    private static final int BORDER_WIDTH = 5;
+    @Override
+    public void processRequest(RequestContext context) throws IOException {
+        context.setMimeType("image/png");
+        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);
+
+        Graphics2D g = bufferedImage.createGraphics();
+        g.setColor(MIUtils.generateRandomColor());
+        g.fillRect(0, 0, 100, 100);
+        g.setColor(MIUtils.generateRandomColor());
+        g.fillRect(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 - 2 * BORDER_WIDTH);
+        g.dispose();
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, "png", bos);
+        context.write(bos.toByteArray());
+    }
+}
+
+## MiSetVariant
+
+public class MiSetVariant implements IWebWorker {
+    @Override
+    public void processRequest(RequestContext context) throws IOException {
+        String bgVariant = context.getParameter("bgVariant");
+        context.setPersistentParameter("bgVariant", bgVariant);
+        context.dispatch("/mi/vrijeme");
+    }
+}
+
+## VrijemeWorker
+
+public class VrijemeWorker implements IWebWorker {
+    private static final String BG_SQUARES = "/mi/square";
+    private static final String BG_ELLIPSES = "/mi/ellipse";
+    @Override
+    public void processRequest(RequestContext context) throws IOException {
+        String bgVariant = context.getPersistentParameter("bgVariant");
+
+        if (bgVariant == null) {
+            bgVariant = "renadom";
+        }
+
+        switch (bgVariant) {
+            case "squares":
+                context.setTemporaryParameter("bgUrl", BG_SQUARES);
+                break;
+            case "ellipses":
+                context.setTemporaryParameter("bgUrl", BG_ELLIPSES);
+                break;
+            default:
+                if (new Random().nextBoolean()) {
+                    context.setTemporaryParameter("bgUrl", BG_SQUARES);
+                } else {
+                    context.setTemporaryParameter("bgUrl", BG_ELLIPSES);
+                }
+        }
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentTime = sdf.format(new Date());
+
+        context.setTemporaryParameter("currentTime", currentTime);
+        context.dispatch("/private/pages/mi.smscr");
+    }
+}
+
+### Dodana pomocna util klasa  MiUtils
+
+public class MIUtils {
+    public static Color generateRandomColor() {
+        Random r = new Random();
+
+        int red = r.nextInt(256);
+        int green = r.nextInt(256);
+        int blue = r.nextInt(256);
+
+        return new Color(red, green, blue);
+    }
+}
+
+
+--------- DRUGI ZADATAK -------------
+
+### definirana nova .jsp skripta pod WEB-INF/pages/vrijeme.jsp
+
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" session="true" %>
+<html>
+<head>
+    <title>Vrijeme</title>
+    <style>
+        body {
+            background: url("<%= request.getAttribute("bgUrl")%>");
+        }
+    </style>
+</head>
+<body>
+    <h1> <%=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())%></h1>
+
+    <div>
+        <a href="${pageContext.request.contextPath}/mi/setVar?bgVar=squares"><button>Stalno kvadratiće</button></a>
+        <a href="${pageContext.request.contextPath}/mi/setVar?bgVar=ellipses"><button>Stalno elipse</button></a>
+        <a href="${pageContext.request.contextPath}/mi/setVar?bgVar=random"><button>Želim nasumično</button></a>
+    </div>
+</body>
+</html>
+
+
+### mapirani novi servleti na urlove
+
+ <servlet>
+        <servlet-name>vrijeme</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.VrijemeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>vrijeme</servlet-name>
+        <url-pattern>/mi/vrijeme</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>genElipses</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.Ellipses</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>genElipses</servlet-name>
+        <url-pattern>/mi/ellipses</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>genSquares</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.Squares</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>genSquares</servlet-name>
+        <url-pattern>/mi/squares</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>setVar</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.SetVar</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>setVar</servlet-name>
+        <url-pattern>/mi/setVar</url-pattern>
+    </servlet-mapping>
+
+
+### izdađeni novi servleti za generiranje Elipsa
+
+public class Ellipses extends HttpServlet {
+    private static final int BORDER_WIDTH = 10;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("image/png");
+        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);
+
+        Graphics2D g = bufferedImage.createGraphics();
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, 100, 100);
+        g.setColor(Utils.generateRandomColor());
+        g.fillOval(0, 0, 100, 100);
+        g.setColor(Utils.generateRandomColor());
+        g.fillOval(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 - 2 * BORDER_WIDTH);
+        g.dispose();
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, "png", bos);
+        resp.setContentLength(bos.toByteArray().length);
+        resp.getOutputStream().write(bos.toByteArray());
+    }
+}
+
+### za generiranje kvadrata
+
+public class Squares extends HttpServlet {
+    private static final int BORDER_WIDTH = 10;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("image/png");
+        BufferedImage bufferedImage = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);
+
+        Graphics2D g = bufferedImage.createGraphics();
+        g.setColor(Utils.generateRandomColor());
+        g.fillRect(0, 0, 100, 100);
+        g.setColor(Utils.generateRandomColor());
+        g.fillRect(BORDER_WIDTH, BORDER_WIDTH, 100 - 2 * BORDER_WIDTH, 100 - 2 * BORDER_WIDTH);
+        g.dispose();
+
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ImageIO.write(bufferedImage, "png", bos);
+        resp.setContentLength(bos.toByteArray().length);
+        resp.getOutputStream().write(bos.toByteArray());
+    }
+}
+
+### glavni servlet za Vrijeme koji kasnije prosljeduje rendering jspu
+
+public class VrijemeServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String sessionBgUrl = (String) req.getSession().getAttribute("bgUrl");
+
+        if (sessionBgUrl == null) {
+            if (new Random().nextBoolean()) {
+                sessionBgUrl = req.getContextPath() + "/mi/squares";
+            } else {
+                sessionBgUrl = req.getContextPath() + "/mi/ellipses";
+            }
+        }
+        req.setAttribute("bgUrl", sessionBgUrl);
+        req.getRequestDispatcher("/WEB-INF/pages/vrijeme.jsp").forward(req, resp);
+    }
+}
+
+### i SetVar servlet za promijenu preferenci korisnika
+
+public class SetVar extends HttpServlet {
+    private static final String URL_SQUARES = "/mi/squares";
+    private static final String URL_ELLIPSES = "/mi/ellipses";
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String bgVar = req.getParameter("bgVar");
+
+        switch (bgVar) {
+            case "squares":
+                req.getSession().setAttribute("bgUrl", req.getContextPath() + URL_SQUARES);
+                break;
+            case "ellipses":
+                req.getSession().setAttribute("bgUrl", req.getContextPath() + URL_ELLIPSES);
+                break;
+            default:
+                req.getSession().removeAttribute("bgUrl");
+        }
+
+        resp.sendRedirect(req.getContextPath() + "/mi/vrijeme");
+    }
+}
+
+### Util klasa za boje kao i u prvom zadatku
+
+public class Utils {
+    public static Color generateRandomColor() {
+        Random r = new Random();
+
+        int red = r.nextInt(256);
+        int green = r.nextInt(256);
+        int blue = r.nextInt(256);
+
+        return new Color(red, green, blue);
+    }
+}

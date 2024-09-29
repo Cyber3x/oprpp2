@@ -1,0 +1,23 @@
+{$= "text/html" @setMimeType $}
+<html>
+    <head>
+        <title>Zbrajanje</title>
+    </head>
+    <body>
+
+{$= "0" "a" @tparamSet
+    "1" "b" @tparamSet $}
+
+        <table>
+            <thead>
+                <tr><th></th><th></th></tr>
+            </thead>
+            <tbody>
+                <tr><td>a</td><td>{$= "varA" "0" @tparamGet $}</td></tr>
+                <tr><td>b</td><td>{$= "varB" "0" @tparamGet $}</td></tr>
+                <tr><td>a+b</td><td>{$= "zbroj" "0" @tparamGet $}</td></tr>
+            </tbody>
+        </table>
+        <img style="width: 100vw" src="/images/{$= "isNumEven" "" @tparamGet "true" "british.jpg" "side_eye_cat.jpg" @equals $}" />
+    </body>
+</html>

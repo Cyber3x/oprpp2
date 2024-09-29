@@ -1,0 +1,8 @@
+127.0.0.1 - - [22/May/2024:18:34:10 +0200] "GET /voting-app HTTP/1.1" 302 -
+127.0.0.1 - - [22/May/2024:18:34:11 +0200] "GET /voting-app/ HTTP/1.1" 200 1035
+127.0.0.1 - - [22/May/2024:18:34:12 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+127.0.0.1 - - [22/May/2024:18:34:26 +0200] "GET /voting-app/glasanje HTTP/1.1" 200 670
+127.0.0.1 - - [22/May/2024:18:44:11 +0200] "GET /voting-app/servlets/litaj HTTP/1.1" 404 784
+127.0.0.1 - - [22/May/2024:18:44:50 +0200] "GET /voting-app/servleti/listajKratko HTTP/1.1" 500 7692
+127.0.0.1 - - [22/May/2024:18:46:25 +0200] "GET /voting-app/servleti/listajKratko HTTP/1.1" 200 239
+127.0.0.1 - - [22/May/2024:19:39:49 +0200] "GET /voting-app/servleti/listajKratko HTTP/1.1" 500 3565

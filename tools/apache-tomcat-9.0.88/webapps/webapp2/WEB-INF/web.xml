@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+
+    <display-name>Moja prva applikacija</display-name>
+    <description>
+        Prva aplikacija
+    </description>
+
+    <servlet>
+        <servlet-name>setcolor</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.SetColor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>setcolor</servlet-name>
+        <url-pattern>/setcolor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>trig</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.Trigonometric</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>trig</servlet-name>
+        <url-pattern>/trigonometric</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>reportImage</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.ReportImage</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>reportImage</servlet-name>
+        <url-pattern>/reportImage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>powers</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.Powers</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>powers</servlet-name>
+        <url-pattern>/powers</url-pattern>
+    </servlet-mapping>
+
+<!--  GLASANJE-->
+    <servlet>
+        <servlet-name>glasanje</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.glasanje.GlasanjeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>glasanje</servlet-name>
+        <url-pattern>/glasanje</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>glasanje-glasaj</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.glasanje.GlasanjeGlasajServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>glasanje-glasaj</servlet-name>
+        <url-pattern>/glasanje-glasaj</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>glasanje-rezultati</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.glasanje.GlasanjeRezultatiServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>glasanje-rezultati</servlet-name>
+        <url-pattern>/glasanje-rezultati</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>vrijeme</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.VrijemeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>vrijeme</servlet-name>
+        <url-pattern>/mi/vrijeme</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>genElipses</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.Ellipses</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>genElipses</servlet-name>
+        <url-pattern>/mi/ellipses</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>genSquares</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.Squares</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>genSquares</servlet-name>
+        <url-pattern>/mi/squares</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>setVar</servlet-name>
+        <servlet-class>hr.fer.oprpp2.servlets.mi.SetVar</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>setVar</servlet-name>
+        <url-pattern>/mi/setVar</url-pattern>
+    </servlet-mapping>
+
+
+    <listener>
+        <listener-class>hr.fer.oprpp2.listeners.InitListener</listener-class>
+    </listener>
+
+</web-app>

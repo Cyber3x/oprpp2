@@ -1,0 +1,83 @@
+Korak 1.
+-----------------------------------------------
+
+Skinuti Apache Derby bazu:
+
+https://db.apache.org/derby/derby_downloads.html
+
+ --> posljednju verziju za Javu 17 i više (10.16.1.1), i to "bin distribution"
+     (npr. https://downloads.apache.org//db/derby/db-derby-10.16.1.1/db-derby-10.16.1.1-bin.tar.gz
+      ili .zip za Windowse)
+
+Raspakirati; dobit ćete direktorij db-derby-10.16.1.1-bin; u ostatku ovog teksta zvat ćemo ga $DERBY_INSTALL.
+Npr. DERBY_INSTALL=/home/marcupic/bin/java-apps/apache-derby/db-derby-10.16.1.1-bin
+
+Korak 2.
+-----------------------------------------------
+
+Napravite negdje na disku direktorij u kojem će upravitelj baze podataka stvarati sve baze podataka. Taj direktorij označit ćemo u ostatku ovog dokumenta s $DERBY_DATABASES.
+Npr. DERBY_DATABASES=/home/marcupic/tmp/derby-baze
+
+Korak 3.
+-----------------------------------------------
+
+Prekopirajte konfiguracija/derby.properties (dobili ste ga u ovoj ZIP arhivi) u $DERBY_DATABASES; time će se pojaviti datoteka DERBY_DATABASES/derby.properties.
+
+U ovoj konfiguracijskoj datoteci podešeno je da Apache Derby za pristup bazama podataka koristi autentifikaciju, te da podatke po postojećim korisnicima (username+password) čuva u novoj bazi podataka koja se zove credentialsDB. Ova baza podataka trenutno ne postoji, i prvi puta kada je zatrebamo, automatski će se stvoriti, također u direktoriju $DERBY_DATABASES. Korisničko ime korisnika koji je administrator baze podataka je 'sa', a korisničko ime korisnika koji ima samo prava čitanja je 'sb'. Zaporku za korisnika 'sa' sustav će preuzeti iz podataka koje ćemo koristiti kada se prvi puta pokušamo spojiti na bazu, i tu zaporku ćemo dalje koristiti.
+
+Korak 4.
+-----------------------------------------------
+
+Windowsi:
+  Otvorite datoteku setenv.bat i u njoj napravite potrebna podesavanja staza.
+Linux:
+  Otvorite datoteku setenv.sh i u njoj napravite potrebna podesavanja staza.
+
+Nakon toga ćete moći pokretati skripte pripremljene u nastavku (ali još nemojte - napravite najprije korak 5). Prilikom pokretanja tih skripti budite u terminalu/promptu upravo u direktoriju koji sadrži sve skripte i datoteku setenv.sh/setenv.bat.
+
+server-start.bat/server-start.sh ce pokrenuti posluzitelj i OSTATI rezidentan jer se posluzitelj izvodi.
+                 Posluzitelj nikada nemojte nasilno gasiti (ili CTRL+C); koristite za to sljedecu skriptu.
+
+server-stop.bat/server-stop.sh ce ugasiti posluzitelj (uz pretpostavku da ste se prema uputi jednom spojili kao administrator).
+                Nakon ove naredbe prethodno pokrenuti posluzitelj ce se ugasiti.
+
+server-sysinfo.bat/server-sysinfo.sh ispisuje informacije o pokrenutom posluzitelju.
+
+ij-console.bat/ij-console.sh pokrece konzolu u kojoj se mozete spojiti na pokrenuti posluzitelj i zadavati naredbe.
+
+Korak 5.
+-----------------------------------------------
+
+Morate biti u konzoli pozicionirani u ovom direktoriju koji sadrži prethodno opisane pripremljene skripte.
+
+a) pokrenite server-start.bat/server-start.sh
+   Win: server-start.bat
+   Lin: ./server-start.sh
+   Pokrenut će se upravitelj bazama podataka i ispisat će da sluša na portu 1527; ovaj terminal više ne možete koristiti dok ne ugasite upravitelja (što nikada ne raditi nasilno već isključivo preko odgovarajuće naredbe iz novog terminala!)
+   Možete provjeriti da je pokretanjem upravitelja nastala log-datoteka $DERBY_DATABASES/derby.log.
+
+b) otvorite novi terminal, pozicionirajte se u isti ovaj direktorij sa skriptama, i pokrenite ij-console.bat/ij-console.sh:
+   Win: ij-console.bat
+   Lin: ./ij-console.sh
+   Time ćete pokrenuti naredbeno-retčani program koji će se spojiti na upravitelja bazom podataka i omogućiti da mu šaljemo SQL naredbe i upite. Kasnije ćemo pokazati kako za ugodniji rad možemo koristiti i klijenta s grafičkim korisničkim sučeljem (squirrel-sql).
+
+c) U pokrenutom programu ij zadajte redom naredbe (pazite točno kako su napisane, gdje su navodnici, gdje je točka-zarez; najjednostavnije, napravite copy&paste odavde):
+   run 'inicijaliziraj-okruzenje.sql';
+   run 'napravi-bazu.sql';
+   Prva SQL-skripta sadrži naredbu connect koja može potrajati jedno vrijeme; strpite se. Njezinim izvođenjem stvorit će se prethodno spomenuta baza podataka credentialsDB koja će biti smještena u $DERBY_DATABASES/credentialsDB.
+   Ova naredba će stvoriti administratora upravitelja bazama; njegovo korisničko ime je postavljeno na 'sa', a zaporka na 'sapwd22'. Ti su parametri zadani u URL-u koji je iskorišten za prvo spajanje na upravitelja (pogledajte u nekom uređivaču teksta sadržaj datoteke inicijaliziraj-okruzenje.sql). Nakon što je prvim spajanjem na bazu credentialsDB ona stvorena, unutra je zapisano korišteno korisničko ime i zaporka, i pri sljedećim spajanjima na bazu moraju se koristiti isti podatci; ako pri sljedećim pokušajima spajanja na bazu credentialsDB predamo neke druge podatke, upravitelj će ustanoviti da se oni ne slažu sa zapisanima, i odbit će pokušaj spajanja. Stoga ako nešto "grdo" zeznete pa želite sve resetirati, obrišite sve baze, uključivo i credentialsDB, pa ponovno pokrenite inicijaliziraj-okruzenje.sql da biste nanovo stvorili bazu i zadali korisničko ime i zaporku koju će koristiti administrator upravitelja baze podataka (a zatim pokrenite i druge potrebne skripte koje će stvoriti preostale potrebne baze podataka).
+   Za svaku konkretnu aplikaciju koju ćemo raditi, stvarat ćemo po jednu bazu podataka i novog korisnika koji smije raditi isključivo s tom bazom (a za ostale nema ovlasti).
+   Druga skripta (napravi-bazu.sql) radi upravo to; pogledajte je. Stvara novu bazu podataka baza1DB, novog korisnika 'perica' (zaporka 'pero'), i dodjeljuje tom korisniku ovlasti za rad s novostvorenom bazom. Stvaranje baze ako ista ne postoji upravitelju baze podataka Apache Derby naređuje se kroz sam URL slanjem atributa create kojemu je postavljena vrijednost na true; taj atribut treba poslati samo kada stvaramo bazu podataka. Jednom kad je ista stvorena, koristit ćemo URL koji nema dodano create=true. Stvaranje baze podataka, s obzirom da imamo podešeno da se provodi autentifikacija i autorizacija korisnika, upravitelj baze podataka će dopustiti isključivo administratoru baze podataka. Stoga se u URL-u koji koristimo za prvo spajanje na novu bazu podataka (uz dodan create=true) upravo koriste korisničko ime i zaporka koje smo prethodno definirali za administratora. Skripta napravi-bazu.sql, nakon što se spoji kao administrator (pa time Apache Derby i fizički na disku napravi novu bazu) pokreće dvije ugrađene procedure kojima za tu bazu stvara novi korisnički račun (u našem primjeru, to je korisnik "perica" sa zaporkom "pero") i potom upravitelju baze podataka dojavljuje da korisnici 'perica' i 'sa' su jedini korisnici koji imaju puno pravo spajanja na tu novostvorenu bazu. Time će se omogućiti da se naše aplikacije na ovu bazu podataka spajaju novim korisničkim računom koji smo upravo stvorili specifično za ovu bazu podataka, čime se pospješuje sigurnost čitavog sustava, jer naše aplikacije nikada neće trebati administratorski korisnički račun.
+   Ponovimo, nakon pokretanja ove druge SQL-skripte, stvorit će se baza baza1DB smještena u $DERBY_DATABASES/baza1DB i novi korisnički račun.
+
+d) Izadite iz ij-konzole s "exit;"
+
+Korak 6.
+-----------------------------------------------
+
+Pokrenutog upravitelja možete ugasiti pokretanjem skripte:
+   Win: server-stop.bat
+   Lin: ./server-stop.sh
+i to je način na koji to obavezno morate raditi. Ako nasilno gasite upravitelja, može doći do "kvara" podataka, nakon čega postoji mogućnost da se više nećete moći spojiti na stvorene baze. U tom slučaju, obrišite sadržaj direktorija $DERBY_DATABASES (osim datoteke derby.properties), i ponovno odradite korak 5.
+Nakon gašenja upravitelja, u toj ćete konzoli ponovno moći zadavati nove naredbe (pa tako i naredbu kojom opet možete pokrenuti upravitelja).
+
